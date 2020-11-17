@@ -18,41 +18,39 @@ public class login {
     public login() {
         initInterGui();
     }
-    //  登录界面GUI
-    //  测试测试测试
-    //  测试测试测试
+    //  Login interface GUI
     public void initInterGui() {
         JFrame inter = new JFrame("Please login");
 
-        inter.setLayout(null); // 清除布局函数
-        inter.setResizable(false); // 设置窗体大小不可变
+        inter.setLayout(null); // Clear layout function
+        inter.setResizable(false); // Set the window size to be immutable
         inter.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        inter.setLayout(new BorderLayout()); // 新建BorderLayout布局
+        inter.setLayout(new BorderLayout()); // New BorderLayout layout
 
-        // 背景
+        // background
         JPanel panel0 = new JPanel(new FlowLayout());
         ImageIcon icon = new ImageIcon("image/Cart.png");
         JLabel label = new JLabel(icon);
         panel0.add(label);
         inter.add(panel0, BorderLayout.NORTH);
 
-        // 账号密码框
+        // Account password box
         JPanel panel1 = new JPanel(new GridLayout(2, 1, 0, 20));
         panel1.setBorder(new EmptyBorder(10, 10, 10, 60));
 
-        JLabel jl1 = new JLabel("account"); // 创建账号标签
-        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 16)); // 设置字体、样式、大小
-        jl1.setHorizontalAlignment(JTextField.CENTER); // 设置水平居中
-        JTextField jt1 = new JTextField(10); // 创建文本框
-        jt1.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 16)); // 设置字体、样式、大小
+        JLabel jl1 = new JLabel("account"); // Create account label
+        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 16)); // Set font, style, size
+        jl1.setHorizontalAlignment(JTextField.CENTER); // Set horizontal center
+        JTextField jt1 = new JTextField(10); // Create text box
+        jt1.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 16)); // Set font, style, size
 
-        JLabel jl2 = new JLabel("password"); // 创建密码标签
-        jl2.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 16)); // 设置字体、样式、大小
-        jl2.setHorizontalAlignment(JTextField.CENTER); // 设置居中
-        JPasswordField jt2 = new JPasswordField(10); // 创建密码文本框
-        jt2.setEchoChar('*'); // 设置回显字符为 *
-        jt2.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 16)); // 设置字体、样式、大小
+        JLabel jl2 = new JLabel("password"); // Create a password label
+        jl2.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 16)); // Set font, style, size
+        jl2.setHorizontalAlignment(JTextField.CENTER); // Set centered
+        JPasswordField jt2 = new JPasswordField(10); // Create a password text box
+        jt2.setEchoChar('*'); // Set the echo character to *
+        jt2.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 16)); // Set font, style, size
 
         panel1.add(jl1);
         panel1.add(jt1);
@@ -61,11 +59,11 @@ public class login {
 
         inter.add(panel1, BorderLayout.CENTER);
 
-        // 登录按钮
+        // Login button
         JPanel panel2 = new JPanel(new FlowLayout());
 
         JButton jb1 = new JButton("login");
-        // 登录按钮触发事件
+        // Login button trigger event
         jb1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -93,7 +91,7 @@ public class login {
         // Display the window.
         inter.pack();
         inter.setVisible(true);
-        // 设置窗口居中显示
+        // The setting window is displayed in the center
         windowSetting.setFrameCenter(inter);
 
     }

@@ -20,37 +20,37 @@ public class menu {
     public menu() {
         initmenuGui();
     }
-    //菜单GUI
+    //Menu GUI
     public void initmenuGui() {
 
-//        mall mall=new mall();//新建商城
-//        shopping.model.mall.importMall1(mall.getProlist());//导入商城1的商品信息
-//
-//
-//
-//        orderFrame ordergui=new orderFrame();//新建订单界面
-//        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui);//新建购物车界面
-//        productListFrame productlistgui=new productListFrame(shoppingcartgui,mall);//新建商品列表界面
-//        searchFrame search=new searchFrame(shoppingcartgui,mall);//新建搜索界面
+//        mall mall=new mall();//New mall
+//        shopping.model.mall.importMall1(mall.getProlist());//Import product information of Mall 1
+
+
+
+//        orderFrame ordergui=new orderFrame();//New order interface
+//        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui);//New shopping cart interface
+//        productListFrame productlistgui=new productListFrame(shoppingcartgui,mall);//New product list interface
+//        searchFrame search=new searchFrame(shoppingcartgui,mall);//New search interface
 
 
         JFrame menu = new JFrame("Menu navigation");
 
-        menu.setLayout(null); // 清除布局函数
-        menu.setResizable(false); // 设置窗体大小不可变
+        menu.setLayout(null); // Clear layout function
+        menu.setResizable(false); // Set the window size to be immutable
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        menu.setLayout(new BorderLayout()); // 新建BorderLayout布局
+        menu.setLayout(new BorderLayout()); // New BorderLayout layout
 
-        // 欢迎语
+        // Welcome Message
         JPanel panel1 = new JPanel(new FlowLayout());
         JLabel jl1 = new JLabel("Welcome to the shopping system");
-        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 30)); // 设置字体、样式、大小
+        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 30)); // Set font, style, size
         panel1.add(jl1);
         panel1.setBorder(new EmptyBorder(10, 10, 0, 10));
         menu.add(panel1, BorderLayout.NORTH);
 
-//        // 菜单按钮
+//        // Menu button
 //        JPanel panel2 = new JPanel(new GridLayout(5, 1));
 //        JButton jb1 = new JButton("Item list");
 //        jb1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,8 +89,8 @@ public class menu {
             }
         });
 
-//        int w = 10;
-//        int h = 50;
+        int w = 10;
+        int h = 50;
 //        jb1.setPreferredSize(new Dimension(w, h));
 //        jb2.setPreferredSize(new Dimension(w, h));
 //        jb3.setPreferredSize(new Dimension(w, h));
@@ -112,17 +112,17 @@ public class menu {
 //        panel2.setBorder(new EmptyBorder(20, 20, 20, 20));
 //        menu.add(panel2);
 
-        // 版权归属
+        // Copyright ownership
         JPanel panel3 = new JPanel(new FlowLayout());
         JLabel jl3 = new JLabel("Shopping system");
-        jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // 设置字体、样式、大小
+        jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // Set font, style, size
         panel3.add(jl3);
         menu.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
         menu.pack();
         menu.setVisible(true);
-        // 设置窗口居中显示
+        // The setting window is displayed in the center
         windowSetting.setFrameCenter(menu);
     }
 
