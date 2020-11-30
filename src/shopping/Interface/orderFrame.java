@@ -49,7 +49,6 @@ public class orderFrame {
         panel1.setBorder(new EmptyBorder(10, 10, 10, 10));
         orderGui.add(panel1, BorderLayout.NORTH);
 
-        //
         //Empty Order
         JPanel panel0 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         ImageIcon icon = new ImageIcon("image/empty-order.jpg");
