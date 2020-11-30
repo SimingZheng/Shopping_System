@@ -1,11 +1,12 @@
 package shopping.Interface;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -15,137 +16,143 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import shopping.model.dataTransform;
 import shopping.model.mall;
+import shopping.model.product;
 
-public class productListFrame {
+public class searchFrame {
+    JFrame searchGui = new JFrame("Search");
 
-    JTable productListTable;
-    JFrame productListGui = new JFrame("Mall");
 
-    public productListFrame(shoppingCartFrame shoppingCart, mall mall) {
-        initComponents(shoppingCart, mall);
+    public searchFrame(shoppingCartFrame shoppingcar, mall mall) {
+        initSearchGui(shoppingcar,mall);
     }
 
-    private void initComponents(shoppingCartFrame shoppingCart, mall mall) {
+    public void initSearchGui(shoppingCartFrame shoppingcar, mall mall) {
 
-        productListGui.setLayout(null);
-        productListGui.setResizable(false);
 
-        productListGui.setLayout(new BorderLayout()); // New BorderLayout Layout
+        searchGui.setLayout(null); // clean
+        searchGui.setResizable(false); // Set the form size to be immutable
 
-        // 中间
+        searchGui.setLayout(new BorderLayout());
+
+        // Title
+        JPanel panel1 = new JPanel(new FlowLayout());
+        JLabel jl1 = new JLabel("Product Search");
+        jl1.setFont(new Font("Times New Roma", Font.BOLD, 35)); // set font
+        panel1.add(jl1);
+        searchGui.add(panel1, BorderLayout.NORTH);
+
+        //content
         JPanel panel2 = new JPanel(new FlowLayout());
+        JPanel p0 = new JPanel(new FlowLayout());
+        JLabel jl2 = new JLabel("Please enter the product name： ");
+        jl2.setFont(new Font("Times New Roma", Font.BOLD, 15)); // set font
+        JTextField jt1 = new JTextField(12); // Create text box
+        JButton jb1 = new JButton("Search");
 
-        DefaultTableModel model = new DefaultTableModel() { // Set table data unchangeable
+        p0.add(jl2);
+        p0.add(jt1);
+        p0.add(jb1);
+        JPanel p1 = new JPanel(new FlowLayout());
+        JButton jb2= new JButton("add to shopping cart");
+        p1.add(jb2);
+
+        Vector<Vector<Object>> vDate = new Vector<Vector<Object>>();
+        Vector<String> vName = new Vector<String>();
+        vName.addElement("products number");vName.addElement("products name");vName.addElement("Unit price (€)");
+        DefaultTableModel model = new DefaultTableModel() { // Table data cannot be changed
+
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        Vector<Vector<Object>> date = new Vector<Vector<Object>>();
-        Vector<String> names = new Vector<String>();
-        names.add("Product ID");
-        names.add("Product Name");
-        names.add("Unit price (€)");
-        dataTransform.changeList(mall.getProlist(),date);
-        model.setDataVector(date, names);
+        model.setDataVector(vDate,vName);
 
-        JTable productListTable = new JTable(model);//Create a table and set row data and table head
-        windowSetting.setTable(productListTable); // Set Table
+        JTable searchList = new JTable(model);// Create a table that specifies all row data and table headers
+        windowSetting.setTable(searchList); // Set the table
+        searchList.setPreferredScrollableViewportSize(new Dimension(400, 210));
+        JScrollPane searchtListScrollPane = new JScrollPane(searchList);
 
-        JScrollPane ProductListScrollPane = new JScrollPane(productListTable);
+        panel2.add(searchtListScrollPane);
 
-        panel2.add(ProductListScrollPane);
-        panel2.setBorder(new EmptyBorder(10, 10, 10, 10));
-        productListGui.add(panel2, BorderLayout.CENTER);
+        panel2.add(p0);
+        panel2.add(searchtListScrollPane);
+        panel2.add(p1);
+        searchGui.add(panel2);
 
-        // Title
-        JPanel panel1 = new JPanel(new GridLayout(2, 0));
-        JLabel jl1 = new JLabel("Product List");
-        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 25)); // Set font
-        JLabel jl2 = new JLabel("Total " + productListTable.getRowCount() + " items");
-        jl2.setFont(new Font("Times New Roma", Font.PLAIN, 19)); // Set font
-        panel1.add(jl1);
-        panel1.add(jl2);
-        panel1.setBorder(new EmptyBorder(10, 10, 10, 10));
-        productListGui.add(panel1, BorderLayout.NORTH);
-
-        // Copyright
-        JPanel panel3 = new JPanel(new GridLayout(2, 0));
-        JButton jb1 = new JButton("add to shopping cart");
-        jb1.setFont(new java.awt.Font("Times New Roma", 1, 20));
-        JLabel jl3 = new JLabel("Shopping System");
+        // Copyright ownership
+        JPanel panel3 = new JPanel(new FlowLayout());
+        JLabel jl3 = new JLabel("©Shopping System");
         jl3.setFont(new Font("Times New Roma", Font.PLAIN, 15)); // Set font
-        jl3.setHorizontalAlignment(SwingConstants.CENTER);
-        panel3.add(jb1, JPanel.RIGHT_ALIGNMENT);
+        jl3.setHorizontalAlignment(SwingConstants.CENTER); // Sets the left and right center alignment of the control
+
         panel3.add(jl3);
-        productListGui.add(panel3, BorderLayout.SOUTH);
+        searchGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        productListGui.setSize(450, 750);
-        productListGui.setVisible(false);
-        // Set Windows mediate
-        windowSetting.setFrameNear(productListGui);
+        searchGui.setSize(450, 450);
+        searchGui.setVisible(false);
+        // Set the window to center
+        windowSetting.setFrameNear(searchGui);
 
-        jb1.addActionListener(new ActionListener() {
+        jb1.addActionListener(new ActionListener() {//Search for goods
+
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                // AddProduct();
-                String inputValue = JOptionPane.showInputDialog("Please enter number of items you want to add");
-                int a = Integer.parseInt(inputValue);
-                DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) productListTable.getModel();
+                vDate.clear();
+                String pro=jt1.getText();
+                ArrayList<product> prolist=mall.searchProduct(pro);
+                dataTransform.changeList(prolist,vDate);
+                searchList.updateUI();
+            }
+        });
+        jb2.addActionListener(new ActionListener() {
 
-                int row = productListTable.getSelectedRow();
-                Vector<Object> v = new Vector<Object>();
+            public void actionPerformed(ActionEvent e) {//Add items to shopping cart
+                String inputValue = JOptionPane.showInputDialog("Please enter the number of items added");
+                int a=Integer.parseInt(inputValue);
+                DefaultTableModel dtm=(javax.swing.table.DefaultTableModel)searchList.getModel();
+                int row=searchList.getSelectedRow();
+                Vector<Object> v=new Vector<Object>();
                 v.add(dtm.getValueAt(row, 0));
                 v.add(dtm.getValueAt(row, 1));
                 v.add(dtm.getValueAt(row, 2));
                 v.add(a);
-                double b = (double) dtm.getValueAt(row, 2);
-                double vSum = a * b;
-                v.add(vSum);
+                double b=(double) dtm.getValueAt(row, 2);
+                double sum=a*b;
+                v.add(sum);
                 dataTransform pro = new dataTransform();
 
-
-                shopping.model.shoppingCart cart = shoppingCart.getShoppingCart();
-                int index = cart.addProduct(pro.productTransform(v));
-
-                if (index != -1) {// add items in shopping cart
-                    DefaultTableModel dd = (DefaultTableModel) shoppingCart.shoppingCartTable.getModel();
-                    dd.setValueAt(cart.getProlist().get(index).getNum(), index, 3);
-                    double total = cart.getProlist().get(index).getNum()* cart.getProlist().get(index).getPrice();
-                    dd.setValueAt(total, index, 4);
-                } else {// add a row of new items
-                    shoppingCart.getDate().add(v);
-                    shoppingCart.getShoppingCartTable().updateUI();
-                    shoppingCart.getJl2().setText("A total of " + shoppingCart.getShoppingCartTable().getRowCount() + " items");
-                    shoppingCart.getJl0().setText("Total " + cart.getTotal() + " €");
+                int i=shoppingcar.getShoppingCart().addProduct(pro.productTransform(v));
+                if(i!=-1) {//Add existing products to cart
+                    DefaultTableModel dd=(DefaultTableModel)shoppingcar.shoppingCartTable.getModel();
+                    dd.setValueAt(shoppingcar.getShoppingCart().getProlist().get(i).getNum(), i, 3);
+                    double total=shoppingcar.getShoppingCart().getProlist().get(i).getNum()*shoppingcar.getShoppingCart().getProlist().get(i).getPrice();
+                    dd.setValueAt(total, i, 4);
+                }
+                else {//Add a new line of products
+                    shoppingcar.getDate().add(v);
+                    shoppingcar.getShoppingCartTable().updateUI();
+                    shoppingcar.getJl2().setText("A total of " + shoppingcar.getShoppingCartTable().getRowCount() + " item");
+                    double price=Double.parseDouble(v.get(2).toString());
+                    shoppingcar.getJl0().setText("Total " + shoppingcar.getShoppingCart().getTotal() + " €");
                 }
 
-
-                shoppingCartFrame.setShoppingCartCenterPanel(1);
+                shoppingcar.setShoppingCartCenterPanel(1);
             }
         });
     }
 
-    public JTable getProductList() {
-        return productListTable;
+    public JFrame getSearchGui() {
+        return searchGui;
     }
 
-    public void setProductList(JTable productList) {
-        productListTable = productList;
-    }
-
-    public JFrame getShoppingCarGui() {
-        return productListGui;
-    }
-
-    public void setShoppingCarGui(JFrame shoppingCarGui) {
-        productListGui = shoppingCarGui;
+    public void setSearchGui(JFrame searchGui) {
+        this.searchGui = searchGui;
     }
 
 }
