@@ -44,7 +44,7 @@ public class orderFrame {
         // Title
         JPanel panel1 = new JPanel(new FlowLayout());
         JLabel jl1 = new JLabel("My Order");
-        jl1.setFont(new Font("Times New Roma", Font.BOLD, 30));
+        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 30));
         panel1.add(jl1);
         panel1.setBorder(new EmptyBorder(10, 10, 10, 10));
         orderGui.add(panel1, BorderLayout.NORTH);
@@ -91,8 +91,8 @@ public class orderFrame {
 
         // Copyright
         JPanel panel3 = new JPanel(new FlowLayout());
-        JLabel jl3 = new JLabel("©2020 UL 4AM");
-        jl3.setFont(new Font("Times New Roma", Font.PLAIN, 15));
+        JLabel jl3 = new JLabel("Shopping System");
+        jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15));
         jl3.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel3.add(jl3);
@@ -131,7 +131,7 @@ public class orderFrame {
         this.vDate = vDate;
     }
 
-    public void importList(order orderlist) {
+    public void importList(order orderlist) { //Import order into table
         // TODO Auto-generated method stub
         for(product e:orderlist.getList()){
             Vector<Object> v=new Vector<Object>();

@@ -22,30 +22,6 @@ import javax.swing.table.DefaultTableModel;
 import shopping.model.dataTransform;
 import shopping.model.mall;
 
-package shopping.Interface;
-
-        import java.awt.BorderLayout;
-        import java.awt.FlowLayout;
-        import java.awt.Font;
-        import java.awt.GridLayout;
-        import java.awt.event.ActionEvent;
-        import java.awt.event.ActionListener;
-        import java.util.Vector;
-
-        import javax.swing.JButton;
-        import javax.swing.JFrame;
-        import javax.swing.JLabel;
-        import javax.swing.JOptionPane;
-        import javax.swing.JPanel;
-        import javax.swing.JScrollPane;
-        import javax.swing.JTable;
-        import javax.swing.SwingConstants;
-        import javax.swing.border.EmptyBorder;
-        import javax.swing.table.DefaultTableModel;
-
-        import shopping.model.dataTransform;
-        import shopping.model.mall;
-
 public class productListFrame {
 
     JTable productListTable;

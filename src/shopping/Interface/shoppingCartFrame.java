@@ -80,7 +80,7 @@ public class shoppingCartFrame {
         JPanel p0 = new JPanel(new GridLayout(2, 0));
         JLabel jl00 = new JLabel(" ");
         jl0 = new JLabel("A total of " + shoppingCartTable.getRowCount() + " €");
-        jl0.setFont(new Font("Meiryo UI", Font.PLAIN, 19)); // 设置字体、样式、大小
+        jl0.setFont(new Font("Meiryo UI", Font.PLAIN, 19)); // Set font, style, size
 
         JButton jb0 = new JButton("Delete item");
         jb0.setFont(new java.awt.Font("Adobe Gothic Std B", 1, 20));
@@ -110,9 +110,9 @@ public class shoppingCartFrame {
         // Title
         JPanel panel1 = new JPanel(new GridLayout(2, 0));
         JLabel jl1 = new JLabel("Cart");
-        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 25)); // 设置字体、样式、大小
+        jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 25)); // Set font, style, size
         jl2 = new JLabel("A total of " + shoppingCartTable.getRowCount() + " items");
-        jl2.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 19)); // 设置字体、样式、大小
+        jl2.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 19)); // Set font, style, size
         panel1.add(jl1);
         panel1.add(jl2);
         panel1.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -121,8 +121,8 @@ public class shoppingCartFrame {
         // Copyright
         JPanel panel3 = new JPanel(new GridLayout(1, 0));
         JLabel jl3 = new JLabel("Shopping system");
-        jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // 设置字体、样式、大小
-        jl3.setHorizontalAlignment(SwingConstants.CENTER); // 设置控件左右居中对齐
+        jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // Set font, style, size
+        jl3.setHorizontalAlignment(SwingConstants.CENTER); // Set the left and right alignment of the control
         panel3.add(jl3);
         ShoppingCarGui.add(panel3, BorderLayout.SOUTH);
         // Display the window.
@@ -167,7 +167,7 @@ public class shoppingCartFrame {
                 orderFrame.setOrderCenterPanel(1);
             }
         });
-        shoppingCartTable.getModel().addTableModelListener(new TableModelListener() {
+        shoppingCartTable.getModel().addTableModelListener(new TableModelListener() { // Commodity quantity modification
             public void tableChanged(TableModelEvent e) {
                 int col = e.getColumn();
                 int row = e.getFirstRow();

@@ -50,7 +50,7 @@ public class searchFrame {
         //content
         JPanel panel2 = new JPanel(new FlowLayout());
         JPanel p0 = new JPanel(new FlowLayout());
-        JLabel jl2 = new JLabel("Please enter the product name： ");
+        JLabel jl2 = new JLabel("Please enter the product name：");
         jl2.setFont(new Font("Times New Roma", Font.BOLD, 15)); // set font
         JTextField jt1 = new JTextField(12); // Create text box
         JButton jb1 = new JButton("Search");
@@ -87,7 +87,7 @@ public class searchFrame {
 
         // Copyright ownership
         JPanel panel3 = new JPanel(new FlowLayout());
-        JLabel jl3 = new JLabel("©Shopping System");
+        JLabel jl3 = new JLabel("Shopping System");
         jl3.setFont(new Font("Times New Roma", Font.PLAIN, 15)); // Set font
         jl3.setHorizontalAlignment(SwingConstants.CENTER); // Sets the left and right center alignment of the control
 
@@ -95,7 +95,7 @@ public class searchFrame {
         searchGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        searchGui.setSize(450, 450);
+        searchGui.setSize(550, 450);
         searchGui.setVisible(false);
         // Set the window to center
         windowSetting.setFrameNear(searchGui);
