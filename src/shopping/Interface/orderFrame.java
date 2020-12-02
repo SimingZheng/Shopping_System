@@ -63,7 +63,6 @@ public class orderFrame {
         vName.add("Product ID");vName.add("Product Name");vName.add("Unit price (€)");vName.add("Amount");vName.add("Total");
 
         DefaultTableModel model = new DefaultTableModel() {
-
             public boolean isCellEditable(int row, int column) {
                 return false;
             }

@@ -34,5 +34,4 @@ public class dataTransform {
             date.add(row);
         }
     }
-
 }

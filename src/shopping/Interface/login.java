@@ -74,7 +74,9 @@ public class login {
                 user user = ud.isLogin(userName, password);
                 if (user != null) {
                     inter.setVisible(false);
-                    new menu();
+                    String name = user.getUserName();
+                    String membership = user.getMembership();
+                    new menu(name, membership);
                 } else {
                     JOptionPane.showMessageDialog(inter, "The password you entered does not match the account name");
                     jt2.setText("");

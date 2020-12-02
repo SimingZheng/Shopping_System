@@ -17,11 +17,11 @@ import shopping.model.mall;
 
 
 public class menu {
-    public menu() {
-        initmenuGui();
+    public menu(String name, String membership) {
+        initmenuGui(name, membership);
     }
     //Menu GUI
-    public void initmenuGui() {
+    public void initmenuGui(String name, String membership) {
 
         mall mall=new mall();//New mall
         shopping.model.mall.importMall1(mall.getProlist());//Import product information of Mall 1
@@ -29,7 +29,7 @@ public class menu {
 
 
         orderFrame ordergui=new orderFrame();//New order interface
-        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui);//New shopping cart interface
+        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui, name, membership);//New shopping cart interface
         productListFrame productlistgui=new productListFrame(shoppingcartgui,mall);//New product list interface
         searchFrame search=new searchFrame(shoppingcartgui,mall);//New search interface
 
@@ -44,10 +44,10 @@ public class menu {
 
         // Welcome Message
         JPanel panel1 = new JPanel(new FlowLayout());
-        JLabel jl1 = new JLabel("Welcome to the shopping system");
+        JLabel jl1 = new JLabel("Welcome "+ name + " you are "+ membership + " user");
         jl1.setFont(new Font("Adobe Gothic Std B", Font.BOLD, 30)); // Set font, style, size
         panel1.add(jl1);
-        panel1.setBorder(new EmptyBorder(10, 10, 0, 10));
+        panel1.setBorder(new EmptyBorder(10, 100, 0, 100));
         menu.add(panel1, BorderLayout.NORTH);
 
         // Menu button
@@ -55,7 +55,6 @@ public class menu {
         JButton jb1 = new JButton("Item list");
         jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
                 productlistgui.getShoppingCarGui().setVisible(true);
             }
         });
@@ -112,7 +111,6 @@ public class menu {
         panel2.setBorder(new EmptyBorder(20, 20, 20, 20));
         menu.add(panel2);
 
-        // Copyright ownership
         JPanel panel3 = new JPanel(new FlowLayout());
         JLabel jl3 = new JLabel("Shopping system");
         jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // Set font, style, size

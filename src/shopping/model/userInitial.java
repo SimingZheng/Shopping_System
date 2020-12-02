@@ -21,7 +21,10 @@ public class userInitial {
 
     public void init(){
         userMap = new HashMap<String, user>();
-        userMap.put("1", new user("1","1"));
+        userMap.put("1", new user("User1","1", "VIP"));
+        userMap.put("2", new user("User2","2", "Gold"));
+        userMap.put("3", new user("User3","3", "Supreme"));
+        userMap.put("4", new user("User4","4", "General"));
     }
 
     public Map<String, user> getUserMap() {

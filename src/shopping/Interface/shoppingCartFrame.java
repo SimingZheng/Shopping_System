@@ -38,12 +38,15 @@ public class shoppingCartFrame {
     static CardLayout card = new CardLayout();
     static JPanel centerPanel=new JPanel(card);
 
-    public shoppingCartFrame(orderFrame order){
-        initShoppingCarGui(order);
+    public void getNameMembership(){
+
     }
 
-    public void initShoppingCarGui(orderFrame order) {
+    public shoppingCartFrame(orderFrame order, String name, String membership){
+        initShoppingCarGui(order, name, membership);
+    }
 
+    public void initShoppingCarGui(orderFrame order, String name, String membership) {
 
         ShoppingCarGui.setLayout(null);
         ShoppingCarGui.setResizable(false); // Set the Windows size unchanged
@@ -106,7 +109,6 @@ public class shoppingCartFrame {
         }
         ShoppingCarGui.add(centerPanel, BorderLayout.CENTER);
 
-
         // Title
         JPanel panel1 = new JPanel(new GridLayout(2, 0));
         JLabel jl1 = new JLabel("Cart");
@@ -118,7 +120,6 @@ public class shoppingCartFrame {
         panel1.setBorder(new EmptyBorder(10, 10, 10, 10));
         ShoppingCarGui.add(panel1, BorderLayout.NORTH);
 
-        // Copyright
         JPanel panel3 = new JPanel(new GridLayout(1, 0));
         JLabel jl3 = new JLabel("Shopping system");
         jl3.setFont(new Font("Adobe Gothic Std B", Font.PLAIN, 15)); // Set font, style, size
@@ -151,11 +152,11 @@ public class shoppingCartFrame {
         jb1.addActionListener(new ActionListener() {//check out
 
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "successfully deleted", "remind", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "checkout successfully", "remind", JOptionPane.WARNING_MESSAGE);
                 if(date.isEmpty()) {
                     return;
                 }
-                shopping.model.order orderlist=new order(shoppingCart.getProlist(), shopping.model.shoppingCart.getTotal());
+                shopping.model.order orderlist=new order(shoppingCart.getProlist(), shopping.model.shoppingCart.getTotal(), membership);
                 order.importList(orderlist);
                 shopping.model.shoppingCart.setTotal(0.0);
                 jl2.setText("A total of  " + 0 + " item");
