@@ -21,18 +21,18 @@ public class userInitial {
 
     public void init(){
         userMap = new HashMap<String, user>();
-        userMap.put("1", new user("User1","1", "VIP"));
-        userMap.put("2", new user("User2","2", "Gold"));
-        userMap.put("3", new user("User3","3", "Supreme"));
-        userMap.put("4", new user("User4","4", "General"));
+        userMap.put("1", new user("User1","123", "VIP", 2));
+        userMap.put("2", new user("User2","123", "Gold",2));
+        userMap.put("3", new user("User3","123 ", "Supreme",2));
+        userMap.put("4", new user("User4","123", "General",2));
     }
 
     public Map<String, user> getUserMap() {
         return userMap;
     }
 
-    public void setUserMap(Map<String, user> userMap) {
-        this.userMap = userMap;
+    public void setUserMap(String userName, int point) {
+        userMap.put(userName, userMap.get(point));
     }
 
     public user isLogin(String userName, String password) {

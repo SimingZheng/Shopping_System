@@ -42,11 +42,11 @@ public class shoppingCartFrame {
 
     }
 
-    public shoppingCartFrame(orderFrame order, String name, String membership){
-        initShoppingCarGui(order, name, membership);
+    public shoppingCartFrame(orderFrame order, String name, String membership, int point){
+        initShoppingCarGui(order, name, membership, point);
     }
 
-    public void initShoppingCarGui(orderFrame order, String name, String membership) {
+    public void initShoppingCarGui(orderFrame order, String name, String membership, int point) {
 
         ShoppingCarGui.setLayout(null);
         ShoppingCarGui.setResizable(false); // Set the Windows size unchanged
@@ -156,7 +156,7 @@ public class shoppingCartFrame {
                 if(date.isEmpty()) {
                     return;
                 }
-                shopping.model.order orderlist=new order(shoppingCart.getProlist(), shopping.model.shoppingCart.getTotal(), membership);
+                shopping.model.order orderlist=new order(shoppingCart.getProlist(), name, shopping.model.shoppingCart.getTotal(), membership, point);
                 order.importList(orderlist);
                 shopping.model.shoppingCart.setTotal(0.0);
                 jl2.setText("A total of  " + 0 + " item");

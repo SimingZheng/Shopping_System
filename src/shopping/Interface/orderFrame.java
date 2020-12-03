@@ -29,11 +29,11 @@ public class orderFrame {
     static CardLayout orderCard = new CardLayout();
     static JPanel centerPanel = new JPanel(orderCard);
 
-    public orderFrame() {
-        initorderGui();
+    public orderFrame(String name, int point) {
+        initorderGui(name, point);
     }
 
-    public void initorderGui() {
+    public void initorderGui(String name, int point) {
 
         orderGui.setLayout(null);
         orderGui.setResizable(false);
@@ -142,14 +142,16 @@ public class orderFrame {
             v.add(n);
             vDate.add(v);
         }
-        Vector<Object> row=new Vector<Object>();
-        row.add(null);
-        row.add(null);
-        row.add(null);
-        row.add("Total:");
-        row.add(orderlist.getTotal());
+        Vector<Object>
+        row= new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add("Total:");row.add(orderlist.getTotal());
         vDate.add(row);
-        row=new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add(null);row.add(null);
+        row=new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add("Membership discount:");row.add(orderlist.getDiscount());
+        vDate.add(row);
+        row=new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add("Point discount:");row.add("-" + orderlist.getDiscountPoint() + " (" + orderlist.getDiscountPoint()*5 + ")");
+        vDate.add(row);
+        row=new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add("Point reward:");row.add("+" + orderlist.getCurrent_point());
+        vDate.add(row);
+        row=new Vector<Object>();row.add(null);row.add(null);row.add(null);row.add("Delivery fee:");row.add(orderlist.getDeliverFee());
         vDate.add(row);
         orderTable.updateUI();
     }

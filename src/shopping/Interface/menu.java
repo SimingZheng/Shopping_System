@@ -17,19 +17,19 @@ import shopping.model.mall;
 
 
 public class menu {
-    public menu(String name, String membership) {
-        initmenuGui(name, membership);
+    public menu(String name, String membership, int point) {
+        initmenuGui(name, membership, point);
     }
     //Menu GUI
-    public void initmenuGui(String name, String membership) {
+    public void initmenuGui(String name, String membership, int point) {
 
         mall mall=new mall();//New mall
         shopping.model.mall.importMall1(mall.getProlist());//Import product information of Mall 1
 
 
 
-        orderFrame ordergui=new orderFrame();//New order interface
-        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui, name, membership);//New shopping cart interface
+        orderFrame ordergui=new orderFrame(name, point);//New order interface
+        shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui, name, membership, point);//New shopping cart interface
         productListFrame productlistgui=new productListFrame(shoppingcartgui,mall);//New product list interface
         searchFrame search=new searchFrame(shoppingcartgui,mall);//New search interface
 
