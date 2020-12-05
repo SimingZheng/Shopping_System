@@ -10,62 +10,39 @@ public class order {
 
     double total;
     String discount;
+    String deliverFee;
     int current_point;
     int discountPoint;
-    String deliverFee;
+    String [] Array_MembershipDiscount;
+    String [] Array_DeliverFee;
+
     public order(ArrayList<product> orderlist, String name, double total, String membership, int point) {
         this.list=orderlist;
-        switch (membership) {
-            case "VIP":
-                total *= 0.75;
-                discount = " (5% discount)";
-                break;
-            case "Gold":
-                total *= 0.9;
-                discount = " (10% discount)";
-                break;
-            case "Supreme":
-                total *= 0.8;
-                discount = " (20% discount)";
-                break;
-            default:
-                total = total*1;
-                discount = " (no discount)";
-                break;
-        }
-        current_point = (int) (total / 50);
-        userInitial ud = new userInitial();
-        ud.setUserMap(name, current_point);
-        discountPoint = point;
-        total -= 5*point;
-        if (total <= 0)
-            total = 0;
-        if (total >= 100)
-            deliverFee = "Free";
-        else{
-            total += 5;
-            deliverFee = "5";
-        }
+        userInitial Ini = new userInitial();
+        Array_MembershipDiscount = Ini.getMememberhipDiscount(total, membership);
+        total = Double.parseDouble(Array_MembershipDiscount[0]);
+        discount = Array_MembershipDiscount[1];
+        current_point = Ini.getCurrentPoint(total);
+//        userInitial ud = new userInitial();
+//        ud.setUserMap(name, current_point);
+        total = Ini.getPointDiscount(total, point);
+        Array_DeliverFee = Ini.getDeliverFee(total);
+        total = Double.parseDouble(Array_DeliverFee[0]);
+        deliverFee = Array_DeliverFee[1];
         this.total = total;
     }
 
     public ArrayList<product> getList() {
         return list;
     }
-
     public void setList(ArrayList<product> list) {
         this.list = list;
     }
-
     public String getDiscount(){
         return discount;
     }
-
     public double getTotal() {
         return total;
-    }
-    public void setTotal(double total) {
-        this.total = total;
     }
     public int getCurrent_point(){
         return current_point;
