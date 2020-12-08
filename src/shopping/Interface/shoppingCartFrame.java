@@ -56,7 +56,7 @@ public class shoppingCartFrame {
         //
         // empty shopping cart
         JPanel panel0 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        ImageIcon icon = new ImageIcon("image/empty cart.png");
+        ImageIcon icon = new ImageIcon("image/empty-cart.png");
         JLabel label = new JLabel(icon);
         panel0.add(label);
 
