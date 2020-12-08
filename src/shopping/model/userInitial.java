@@ -21,14 +21,13 @@ public class userInitial {
             init();
         }
         this.userMap = userMap;
-
     }
 
     public void init(){
         userMap = new HashMap<String, user>();
         userMap.put("1", new user("User1","123", "VIP", 2));
         userMap.put("2", new user("User2","123", "Gold",2));
-        userMap.put("3", new user("User3","123 ", "Supreme",2));
+        userMap.put("3", new user("User3","123", "Supreme",2));
         userMap.put("4", new user("User4","123", "General",2));
     }
 
