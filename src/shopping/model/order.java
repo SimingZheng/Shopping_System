@@ -23,8 +23,8 @@ public class order {
         total = Double.parseDouble(Array_MembershipDiscount[0]);
         discount = Array_MembershipDiscount[1];
         current_point = Ini.getCurrentPoint(total);
-//        userInitial ud = new userInitial();
-//        ud.setUserMap(name, current_point);
+        userInitial ud = new userInitial();
+        ud.setUserMap(name, current_point);
         total = Ini.getPointDiscount(total, point);
         Array_DeliverFee = Ini.getDeliverFee(total);
         total = Double.parseDouble(Array_DeliverFee[0]);

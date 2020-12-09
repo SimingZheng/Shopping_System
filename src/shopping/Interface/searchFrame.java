@@ -85,7 +85,6 @@ public class searchFrame {
         panel2.add(p1);
         searchGui.add(panel2);
 
-        // Copyright ownership
         JPanel panel3 = new JPanel(new FlowLayout());
         JLabel jl3 = new JLabel("Shopping System");
         jl3.setFont(new Font("Times New Roma", Font.PLAIN, 15)); // Set font
