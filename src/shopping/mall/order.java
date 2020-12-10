@@ -1,6 +1,10 @@
 package shopping.mall;
 
+import shopping.point.*;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class order {
@@ -23,8 +27,20 @@ public class order {
         discount = Array_MembershipDiscount[1];
 
         current_point = Ini.getCurrentPoint(total);
-        userInitial ud = new userInitial();
-        ud.setUserMap(name, current_point);
+        pointSettor userPoint = new userPoint(name);
+        points Points = new points(userPoint);
+        SimpleDateFormat data_format = new SimpleDateFormat("MM-dd-yyyy");
+        String BlackFriday = "11-27-2020";
+        Date Today = new Date( );
+        System.out.println(data_format.format(Today));
+        if(BlackFriday.equals(data_format.format(Today))) {
+            points festival_point = new festivalPoint(Points, current_point, name);
+            festival_point.addPoint();
+            current_point = current_point*2;
+        }else {
+            points normal_point = new normalPoint(Points, current_point, name);
+            normal_point.addPoint();
+        }
 
         discountPoint = point;
         total = Ini.getPointDiscount(total, point);
