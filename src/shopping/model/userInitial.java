@@ -39,27 +39,9 @@ public class userInitial {
         userMap.put(userName, userMap.get(point));
     }
 
-    public String [] getMememberhipDiscount(double total, String membership){
-        switch (membership) {
-            case "VIP":
-                total *= 0.95;
-                discount = " (5% discount)";
-                break;
-            case "Gold":
-                total *= 0.9;
-                discount = " (10% discount)";
-                break;
-            case "Supreme":
-                total *= 0.8;
-                discount = " (20% discount)";
-                break;
-            default:
-                total = total*1;
-                discount = " (no discount)";
-                break;
-        }
-        Array_MembershipDiscount[0] = Double.toString(total);
-        Array_MembershipDiscount[1] = discount;
+    public String [] getMemberhipDiscount(double total, String membership){
+        membershipIdentify membershipIdentify = new membershipIdentify();
+        Array_MembershipDiscount = membershipIdentify.getDiscount(total, membership);
         return Array_MembershipDiscount;
     }
 

@@ -18,14 +18,19 @@ public class order {
 
     public order(ArrayList<product> orderlist, String name, double total, String membership, int point) {
         this.list=orderlist;
+
         userInitial Ini = new userInitial();
-        Array_MembershipDiscount = Ini.getMememberhipDiscount(total, membership);
+        Array_MembershipDiscount = Ini.getMemberhipDiscount(total, membership);
         total = Double.parseDouble(Array_MembershipDiscount[0]);
         discount = Array_MembershipDiscount[1];
+
         current_point = Ini.getCurrentPoint(total);
         userInitial ud = new userInitial();
         ud.setUserMap(name, current_point);
+
+        discountPoint = point;
         total = Ini.getPointDiscount(total, point);
+
         Array_DeliverFee = Ini.getDeliverFee(total);
         total = Double.parseDouble(Array_DeliverFee[0]);
         deliverFee = Array_DeliverFee[1];
