@@ -17,8 +17,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import shopping.model.order;
-import shopping.model.product;
+import shopping.mall.order;
+import shopping.mall.product;
 
 public class orderFrame {
     JTable orderTable;

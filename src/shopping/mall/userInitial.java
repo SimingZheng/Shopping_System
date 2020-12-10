@@ -1,4 +1,6 @@
-package shopping.model;
+package shopping.mall;
+
+import shopping.membership.membershipIdentify;
 
 import java.util.HashMap;
 import java.util.Map;

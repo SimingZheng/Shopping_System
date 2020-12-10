@@ -1,6 +1,4 @@
-package shopping.model;
-
-import shopping.Interface.menu;
+package shopping.mall;
 
 import java.util.ArrayList;
 

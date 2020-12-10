@@ -20,9 +20,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import shopping.model.dataTransform;
-import shopping.model.mall;
-import shopping.model.product;
+import shopping.mall.dataTransform;
+import shopping.mall.mall;
+import shopping.mall.product;
 
 public class searchFrame {
     JFrame searchGui = new JFrame("Search");

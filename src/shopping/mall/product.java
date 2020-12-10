@@ -1,6 +1,4 @@
-package shopping.model;
-
-import java.util.Vector;
+package shopping.mall;
 
 public class product {
     private String id;

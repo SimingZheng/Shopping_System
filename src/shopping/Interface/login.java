@@ -11,9 +11,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-import shopping.model.membershipIdentify;
-import shopping.model.user;
-import shopping.model.userInitial;
+import shopping.membership.membershipIdentify;
+import shopping.mall.user;
+import shopping.mall.userInitial;
 
 public class login {
     private String [] ArrayUser = new String[3];

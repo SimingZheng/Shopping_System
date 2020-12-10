@@ -1,4 +1,4 @@
-package shopping.model;
+package shopping.membership;
 
 public class membershipIdentify {
     private String [] ArrayDiscount = new String[2];

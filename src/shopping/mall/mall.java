@@ -1,4 +1,4 @@
-package shopping.model;
+package shopping.mall;
 
 import java.io.BufferedReader;
 import java.io.File;

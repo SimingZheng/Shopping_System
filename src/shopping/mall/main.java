@@ -1,4 +1,4 @@
-package shopping.model;
+package shopping.mall;
 
 import shopping.Interface.login;
 

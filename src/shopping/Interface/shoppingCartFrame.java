@@ -23,8 +23,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
-import shopping.model.shoppingCart;
-import shopping.model.order;
+import shopping.mall.shoppingCart;
+import shopping.mall.order;
 
 public class shoppingCartFrame {
     JTable shoppingCartTable;
@@ -34,13 +34,9 @@ public class shoppingCartFrame {
     Vector<String> ColumnNames = new Vector<String>();
     JLabel jl2;//The number of items in shopping cart
     JLabel jl0;//The total price of items in shopping cart
-    shopping.model.shoppingCart shoppingCart=new shoppingCart();
+    shopping.mall.shoppingCart shoppingCart=new shoppingCart();
     static CardLayout card = new CardLayout();
     static JPanel centerPanel=new JPanel(card);
-
-    public void getNameMembership(){
-
-    }
 
     public shoppingCartFrame(orderFrame order, String name, String membership, int point){
         initShoppingCarGui(order, name, membership, point);
@@ -142,8 +138,8 @@ public class shoppingCartFrame {
                 dtm.removeRow(row);
                 shoppingCart.getProlist().remove(row);
                 jl2.setText("A total of " + shoppingCartTable.getRowCount() + " items");
-                shopping.model.shoppingCart.setTotal(shopping.model.shoppingCart.getTotal()-n);
-                jl0.setText("Total " + shopping.model.shoppingCart.getTotal() + " €");
+                shopping.mall.shoppingCart.setTotal(shopping.mall.shoppingCart.getTotal()-n);
+                jl0.setText("Total " + shopping.mall.shoppingCart.getTotal() + " €");
                 if( shoppingCartTable.getRowCount() == 0 ) {
                     setShoppingCartCenterPanel(0);
                 }
@@ -156,11 +152,11 @@ public class shoppingCartFrame {
                 if(date.isEmpty()) {
                     return;
                 }
-                shopping.model.order orderlist=new order(shoppingCart.getProlist(), name, shopping.model.shoppingCart.getTotal(), membership, point);
+                shopping.mall.order orderlist=new order(shoppingCart.getProlist(), name, shopping.mall.shoppingCart.getTotal(), membership, point);
                 order.importList(orderlist);
-                shopping.model.shoppingCart.setTotal(0.0);
+                shopping.mall.shoppingCart.setTotal(0.0);
                 jl2.setText("A total of  " + 0 + " item");
-                jl0.setText("Total " + shopping.model.shoppingCart.getTotal() + " €");
+                jl0.setText("Total " + shopping.mall.shoppingCart.getTotal() + " €");
                 shoppingCart.getProlist().clear();
                 date.clear();
                 shoppingCartTable.updateUI();
@@ -175,7 +171,7 @@ public class shoppingCartFrame {
 
                 if (col == 3 ) {
                     double v4 = Double.valueOf(String.valueOf(shoppingCartTable.getValueAt(row, 4)));
-                    shopping.model.shoppingCart.setTotal(shopping.model.shoppingCart.getTotal()-v4);
+                    shopping.mall.shoppingCart.setTotal(shopping.mall.shoppingCart.getTotal()-v4);
                     double v3 = 0;
                     try {
                         v3 = Double.valueOf(String.valueOf(shoppingCartTable.getValueAt(row, 3)));
@@ -184,8 +180,8 @@ public class shoppingCartFrame {
                     double v2 = Double.valueOf(String.valueOf(shoppingCartTable.getValueAt(row, 2)));
                     shoppingCartTable.setValueAt(v2 * v3, row, 4);
                     v4 = Double.valueOf(String.valueOf(shoppingCartTable.getValueAt(row, 4)));
-                    shopping.model.shoppingCart.setTotal(shopping.model.shoppingCart.getTotal()+v4);
-                    jl0.setText("Total " + shopping.model.shoppingCart.getTotal() + " €");
+                    shopping.mall.shoppingCart.setTotal(shopping.mall.shoppingCart.getTotal()+v4);
+                    jl0.setText("Total " + shopping.mall.shoppingCart.getTotal() + " €");
 
                     shoppingCart.getProlist().get(row).setNum((int)v3);
                 }
@@ -201,11 +197,11 @@ public class shoppingCartFrame {
         ShoppingCarGui = shoppingCarGui;
     }
 
-    public shopping.model.shoppingCart getShoppingCart() {
+    public shopping.mall.shoppingCart getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(shopping.model.shoppingCart shoppingCart) {
+    public void setShoppingCart(shopping.mall.shoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 

@@ -1,4 +1,4 @@
-package shopping.model;
+package shopping.membership;
 
 public interface membership {
     String [] discount(double total);

@@ -19,8 +19,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import shopping.model.dataTransform;
-import shopping.model.mall;
+import shopping.mall.dataTransform;
+import shopping.mall.mall;
 
 public class productListFrame {
 
@@ -111,7 +111,7 @@ public class productListFrame {
                 dataTransform pro = new dataTransform();
 
 
-                shopping.model.shoppingCart cart = shoppingCart.getShoppingCart();
+                shopping.mall.shoppingCart cart = shoppingCart.getShoppingCart();
                 int index = cart.addProduct(pro.productTransform(v));
 
                 if (index != -1) {// add items in shopping cart

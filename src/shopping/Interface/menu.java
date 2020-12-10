@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import shopping.model.mall;
+import shopping.mall.mall;
 
 
 public class menu {
@@ -24,7 +24,7 @@ public class menu {
     public void initmenuGui(String name, String membership, int point) {
 
         mall mall=new mall();//New mall
-        shopping.model.mall.importMall1(mall.getProlist());//Import product information of Mall 1
+        shopping.mall.mall.importMall1(mall.getProlist());//Import product information of Mall 1
 
 
 
