@@ -11,15 +11,19 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import shopping.model.membershipIdentify;
 import shopping.model.user;
 import shopping.model.userInitial;
 
 public class login {
+    private String [] ArrayUser = new String[3];
+
     public login() {
         initInterGui();
     }
     //  Login interface GUI
     public void initInterGui() {
+
         JFrame inter = new JFrame("Please login");
 
         inter.setLayout(null); // Clear layout function
@@ -63,6 +67,10 @@ public class login {
         JPanel panel2 = new JPanel(new FlowLayout());
 
         JButton jb1 = new JButton("login");
+        JButton jb2 = new JButton("general");
+        JButton jb3 = new JButton("vip");
+        JButton jb4 = new JButton("gold");
+        JButton jb5 = new JButton("supreme");
         // Login button trigger event
         jb1.addActionListener(new ActionListener() {
             @Override
@@ -85,9 +93,64 @@ public class login {
                 }
             }
         });
-
+        jb2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                jb2.setText("login......");
+                inter.setVisible(false);
+                membershipIdentify membershipIdentify = new membershipIdentify();
+                ArrayUser = membershipIdentify.getUserMembership("General");
+                String name = ArrayUser[0];
+                String membership = ArrayUser[1];
+                int point = Integer.parseInt(ArrayUser[2]);
+                new menu(name, membership, point);
+                }
+        });
+        jb3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                jb3.setText("login......");
+                inter.setVisible(false);
+                membershipIdentify membershipIdentify = new membershipIdentify();
+                ArrayUser = membershipIdentify.getUserMembership("VIP");
+                String name = ArrayUser[0];
+                String membership = ArrayUser[1];
+                int point = Integer.parseInt(ArrayUser[2]);
+                new menu(name, membership, point);
+            }
+        });
+        jb4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                jb4.setText("login......");
+                inter.setVisible(false);
+                membershipIdentify membershipIdentify = new membershipIdentify();
+                ArrayUser = membershipIdentify.getUserMembership("Gold");
+                String name = ArrayUser[0];
+                String membership = ArrayUser[1];
+                int point = Integer.parseInt(ArrayUser[2]);
+                new menu(name, membership, point);
+            }
+        });
+        jb5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                jb5.setText("login......");
+                inter.setVisible(false);
+                membershipIdentify membershipIdentify = new membershipIdentify();
+                ArrayUser = membershipIdentify.getUserMembership("Supreme");
+                String name = ArrayUser[0];
+                String membership = ArrayUser[1];
+                int point = Integer.parseInt(ArrayUser[2]);
+                new menu(name, membership, point);
+            }
+        });
 
         panel2.add(jb1);
+        panel2.add(jb2);
+        panel2.add(jb3);
+        panel2.add(jb4);
+        panel2.add(jb5);
 
         inter.add(panel2, BorderLayout.SOUTH);
 
