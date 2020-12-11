@@ -29,14 +29,17 @@ public class order {
         current_point = Ini.getCurrentPoint(total);
         pointSettor userPoint = new userPoint(name);
         points Points = new points(userPoint);
-        SimpleDateFormat data_format = new SimpleDateFormat("MM-dd-yyyy");
-        String BlackFriday = "11-27-2020";
+        SimpleDateFormat data_format = new SimpleDateFormat("MM-dd");
+        String BlackFriday = "11-27";
         Date Today = new Date( );
         System.out.println(data_format.format(Today));
         if(BlackFriday.equals(data_format.format(Today))) {
-            points festival_point = new festivalPoint(Points, current_point, name);
+            points normal_point = new normalPoint(Points, current_point, name);
+            points festival_point = new festivalPoint(normal_point, current_point, name);
             festival_point.addPoint();
             current_point = current_point*2;
+            blackFridayNotification notification = blackFridayNotification.getInstance();
+            notification.showNotification();
         }else {
             points normal_point = new normalPoint(Points, current_point, name);
             normal_point.addPoint();

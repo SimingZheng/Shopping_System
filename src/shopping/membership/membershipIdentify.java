@@ -26,10 +26,6 @@ public class membershipIdentify {
     }
 
     public String [] getUserMembership(String membership) {
-        generalUser generalUser = new generalUser();
-        vipUser vipUser = new vipUser();
-        goldUser goldUser = new goldUser();
-        supremeUser supremeUser = new supremeUser();
         switch (membership) {
             case "VIP":
                 return new vipUser().generate();

@@ -1,5 +1,6 @@
 package shopping.point;
 
+// Create an abstract decoration class that implements the pointSettor interface
 public class points implements pointSettor{
 
     private pointSettor user;

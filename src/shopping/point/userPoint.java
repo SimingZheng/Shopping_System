@@ -1,5 +1,6 @@
 package shopping.point;
 
+// Create entity classes that implement interfaces
 public class userPoint implements pointSettor {
 
     private String name;

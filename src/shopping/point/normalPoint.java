@@ -2,6 +2,7 @@ package shopping.point;
 
 import shopping.mall.userInitial;
 
+// Create an entity decoration class that extends the points class
 public class normalPoint extends points {
 
     private int current_point;

@@ -1,5 +1,8 @@
 package shopping.mall;
 
+import shopping.deliverFee.contextFee;
+import shopping.deliverFee.fee;
+import shopping.deliverFee.nofee;
 import shopping.membership.membershipIdentify;
 
 import java.util.HashMap;
@@ -11,7 +14,7 @@ public class userInitial {
     private String discount;
     private String deliverFee;
     private String [] Array_MembershipDiscount = new String[2];
-    private String [] Array_DeliverFee = new String[2];;
+    private String [] Array_DeliverFee = new String[2];
     private int current_point;
 
     public userInitial(){
@@ -60,14 +63,13 @@ public class userInitial {
     }
 
     public String [] getDeliverFee(double total){
-        if (total >= 100)
-            deliverFee = "Free";
-        else{
-            total += 5;
-            deliverFee = "5";
+        if (total >= 100) {
+            contextFee context = new contextFee(new nofee());
+            Array_DeliverFee = context.executeFee(total);
+        }else{
+            contextFee context = new contextFee(new fee());
+            Array_DeliverFee = context.executeFee(total);
         }
-        Array_DeliverFee[0] = Double.toString(total);
-        Array_DeliverFee[1] = deliverFee;
         return Array_DeliverFee;
     }
 

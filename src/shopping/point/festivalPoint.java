@@ -2,6 +2,7 @@ package shopping.point;
 
 import shopping.mall.userInitial;
 
+// Create an entity decoration class that extends the points class
 public class festivalPoint extends points {
 
     private int current_point;
@@ -15,7 +16,7 @@ public class festivalPoint extends points {
 
     @Override
     public void addPoint() {
-        System.out.println("earn normal point: " + current_point);
+        System.out.println("you earn extra point: " + current_point);
         userInitial ud = new userInitial();
         ud.setUserMap(name, current_point*2);
         super.addPoint();
