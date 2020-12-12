@@ -1,4 +1,4 @@
-package shopping.mall;
+package shopping.user;
 
 public class user {
     private String userName;

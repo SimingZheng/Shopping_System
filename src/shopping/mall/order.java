@@ -1,6 +1,7 @@
 package shopping.mall;
 
 import shopping.point.*;
+import shopping.user.userInitial;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

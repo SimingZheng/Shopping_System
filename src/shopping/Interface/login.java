@@ -12,8 +12,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import shopping.membership.membershipIdentify;
-import shopping.mall.user;
-import shopping.mall.userInitial;
+import shopping.user.user;
+import shopping.user.userInitial;
 
 public class login {
     private String [] ArrayUser = new String[3];

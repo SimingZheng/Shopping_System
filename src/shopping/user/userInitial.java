@@ -1,9 +1,10 @@
-package shopping.mall;
+package shopping.user;
 
 import shopping.deliverFee.contextFee;
 import shopping.deliverFee.fee;
 import shopping.deliverFee.nofee;
 import shopping.membership.membershipIdentify;
+import shopping.user.user;
 
 import java.util.HashMap;
 import java.util.Map;

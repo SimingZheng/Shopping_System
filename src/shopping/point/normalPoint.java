@@ -1,6 +1,6 @@
 package shopping.point;
 
-import shopping.mall.userInitial;
+import shopping.user.userInitial;
 
 // Create an entity decoration class that extends the points class
 public class normalPoint extends points {
