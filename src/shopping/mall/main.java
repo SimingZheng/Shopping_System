@@ -1,5 +1,6 @@
 package shopping.mall;
 
+import org.junit.jupiter.api.Test;
 import shopping.Interface.login;
 
 public class main {
