@@ -1,4 +1,4 @@
-package shopping.Interface;
+package shopping.mallBackend;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

@@ -1,7 +1,6 @@
 package shopping.mall;
 
-import org.junit.jupiter.api.Test;
-import shopping.Interface.login;
+import shopping.mallBackend.login;
 
 public class main {
     public static void main(String[] args) {java.awt.EventQueue.invokeLater(new Runnable() {

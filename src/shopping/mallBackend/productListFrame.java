@@ -1,4 +1,4 @@
-package shopping.Interface;
+package shopping.mallBackend;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -19,6 +19,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import shopping.bundling.bundleBuilder;
+import shopping.bundling.bundleProduct;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
 
@@ -100,16 +102,36 @@ public class productListFrame {
                 DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) productListTable.getModel();
 
                 int row = productListTable.getSelectedRow();
+                // the bundling function
+                double cost = 0;
+                bundleBuilder builder = new bundleBuilder();
+                System.out.println("here");
+                if (dtm.getValueAt(row, 1).equals("furniture bundling")) {
+                    bundleProduct furniture = builder.prepareFurniture();
+                    System.out.println("furniture bundling");
+                    furniture.showItems();
+                    System.out.println("Total Cost: " + furniture.getCost());
+                    cost = furniture.getCost();
+                }
+
+                if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
+                    bundleProduct mobile = builder.prepareMobile();
+                    System.out.println("\n\nmobile bundling");
+                    mobile.showItems();
+                    System.out.println("Total Cost: " + mobile.getCost());
+                    cost = mobile.getCost();
+                }
+                cost += (double)dtm.getValueAt(row, 2);
+
                 Vector<Object> v = new Vector<Object>();
                 v.add(dtm.getValueAt(row, 0));
                 v.add(dtm.getValueAt(row, 1));
-                v.add(dtm.getValueAt(row, 2));
+                v.add(cost);
                 v.add(a);
                 double b = (double) dtm.getValueAt(row, 2);
-                double vSum = a * b;
+                double vSum = a * cost;
                 v.add(vSum);
                 dataTransform pro = new dataTransform();
-
 
                 shopping.mall.shoppingCart cart = shoppingCart.getShoppingCart();
                 int index = cart.addProduct(pro.productTransform(v));
