@@ -1,4 +1,5 @@
 package shopping.bundling;
+
 // Create entity classes that extend subItemAbstract.
 public class chair extends subItemAbstract{
     @Override

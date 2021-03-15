@@ -19,8 +19,10 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import shopping.bundling.bundleBuilder;
-import shopping.bundling.bundleProduct;
+import shopping.bundling.*;
+import shopping.composite.compositeOperating;
+import shopping.composite.leafEletricProduct;
+import shopping.composite.leafFurniture;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
 
@@ -34,6 +36,8 @@ public class productListFrame {
     }
 
     private void initComponents(shoppingCartFrame shoppingCart, mall mall) {
+
+        compositeOperating operating = new compositeOperating(0,"operating");
 
         productListGui.setLayout(null);
         productListGui.setResizable(false);
@@ -106,21 +110,38 @@ public class productListFrame {
                 double cost = 0;
                 bundleBuilder builder = new bundleBuilder();
                 System.out.println("here");
+
+                int flag = 0;
+
                 if (dtm.getValueAt(row, 1).equals("furniture bundling")) {
                     bundleProduct furniture = builder.prepareFurniture();
                     System.out.println("furniture bundling");
                     furniture.showItems();
                     System.out.println("Total Cost: " + furniture.getCost());
                     cost = furniture.getCost();
+
+                    leafFurniture Furniture = new leafFurniture(furniture.getCost(), "Furniture Bundling");
+                    operating.addProduct(Furniture);
+
+                    flag = 1;
                 }
 
                 if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
-                    bundleProduct mobile = builder.prepareMobile();
+                    bundleProduct mobile = builder.prepareElectricalProduct();
                     System.out.println("\n\nmobile bundling");
                     mobile.showItems();
                     System.out.println("Total Cost: " + mobile.getCost());
                     cost = mobile.getCost();
+
+                    leafEletricProduct EletricProduct = new leafEletricProduct(mobile.getCost(), "Electric Product Bundling");
+                    operating.addProduct(EletricProduct);
+
+                    flag = 1;
                 }
+                if (flag == 1){
+                    operating.printProduct();
+                }
+
                 cost += (double)dtm.getValueAt(row, 2);
 
                 Vector<Object> v = new Vector<Object>();

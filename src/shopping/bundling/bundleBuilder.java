@@ -8,7 +8,7 @@ public class bundleBuilder {
         return bundle;
     }
 
-    public bundleProduct prepareMobile (){
+    public bundleProduct prepareElectricalProduct (){
         bundleProduct bundle = new bundleProduct();
         bundle.addItem(new mobile());
         bundle.addItem(new phoneCase());
