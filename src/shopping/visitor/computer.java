@@ -1,11 +1,12 @@
 package shopping.visitor;
 
+// Create an entity class that extends the computerPart class
 public class computer implements computerPart {
 
     computerPart[] parts;
 
     public computer(){
-        parts = new computerPart[] {new mouse(), new keyboard(), new monitor()};
+        parts = new computerPart[] {new mouse(), new keyboard(), new monitor(), new computerHost()};
     }
 
     @Override

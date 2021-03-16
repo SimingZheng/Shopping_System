@@ -25,6 +25,9 @@ import shopping.composite.leafEletricProduct;
 import shopping.composite.leafFurniture;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
+import shopping.visitor.computer;
+import shopping.visitor.computerPart;
+import shopping.visitor.computerPartDisplayVisitor;
 
 public class productListFrame {
 
@@ -92,7 +95,7 @@ public class productListFrame {
         productListGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        productListGui.setSize(450, 750);
+        productListGui.setSize(450, 800);
         productListGui.setVisible(false);
         // Set Windows mediate
         windowSetting.setFrameNear(productListGui);
@@ -138,6 +141,30 @@ public class productListFrame {
 
                     flag = 1;
                 }
+
+                if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
+                    bundleProduct mobile = builder.prepareElectricalProduct();
+                    System.out.println("\n\nmobile bundling");
+                    mobile.showItems();
+                    System.out.println("Total Cost: " + mobile.getCost());
+                    cost = mobile.getCost();
+
+                    leafEletricProduct EletricProduct = new leafEletricProduct(mobile.getCost(), "Electric Product Bundling");
+                    operating.addProduct(EletricProduct);
+
+                    flag = 1;
+                }
+
+                if (dtm.getValueAt(row, 1).equals("computer")) {
+                    bundleProduct computer = builder.prepareElectricalProduct();
+                    computer.showItems();
+                    cost = computer.getCost();
+
+                    // Use ComputerPartDisplayVisitor to display the components of Computer
+                    computerPart computerpart = new computer();
+                    computerpart.accept(new computerPartDisplayVisitor());
+                }
+
                 if (flag == 1){
                     operating.printProduct();
                 }

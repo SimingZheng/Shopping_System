@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import shopping.mall.mall;
+import shopping.visitor.computer;
+import shopping.visitor.computerPart;
+import shopping.visitor.computerPartDisplayVisitor;
 
 
 public class menu {
@@ -25,8 +28,6 @@ public class menu {
 
         mall mall=new mall();//New mall
         shopping.mall.mall.importMall1(mall.getProlist());//Import product information of Mall 1
-
-
 
         orderFrame ordergui=new orderFrame(name, point);//New order interface
         shoppingCartFrame shoppingcartgui= new shoppingCartFrame(ordergui, name, membership, point);//New shopping cart interface
