@@ -12,4 +12,3 @@
 1012,Nokia mobile, 100.0, -1
 1013,furniture bundling, 0, -1
 1014,mobile bundling, 0, -1
-1015,computer, 500.0, -1

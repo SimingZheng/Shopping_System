@@ -25,9 +25,10 @@ import shopping.composite.leafEletricProduct;
 import shopping.composite.leafFurniture;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
-import shopping.visitor.computer;
-import shopping.visitor.computerPart;
-import shopping.visitor.computerPartDisplayVisitor;
+import shopping.visitor.bundleDiscountVisitor;
+import shopping.visitor.electricProduct;
+import shopping.visitor.visitable;
+import shopping.visitor.visitor;
 
 public class productListFrame {
 
@@ -112,10 +113,9 @@ public class productListFrame {
                 // the bundling function
                 double cost = 0;
                 bundleBuilder builder = new bundleBuilder();
-                System.out.println("here");
 
-                int flag = 0;
-
+                boolean flag = false;
+                boolean bundling = true;
                 if (dtm.getValueAt(row, 1).equals("furniture bundling")) {
                     bundleProduct furniture = builder.prepareFurniture();
                     System.out.println("furniture bundling");
@@ -126,7 +126,22 @@ public class productListFrame {
                     leafFurniture Furniture = new leafFurniture(furniture.getCost(), "Furniture Bundling");
                     operating.addProduct(Furniture);
 
-                    flag = 1;
+                    visitable visitable = new electricProduct(furniture.getCost());
+                    visitor visitor = new bundleDiscountVisitor();
+                    visitable.accept(visitor);
+
+                    visitable Visitable = new electricProduct(furniture.getCost());
+                    visitor Visitor = new bundleDiscountVisitor();
+                    double bundleCost = Visitable.accept(Visitor);
+
+                    int dialogResult = JOptionPane.showConfirmDialog (null,
+                            "The furniture bundling cost " + a*bundleCost + "\nDo you want add in your cart?",
+                            "Warning", JOptionPane.YES_NO_CANCEL_OPTION);
+                    if(dialogResult == JOptionPane.NO_OPTION || dialogResult == JOptionPane.CANCEL_OPTION){
+                        bundling = false;
+                    }
+
+                    flag = true;
                 }
 
                 if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
@@ -136,66 +151,57 @@ public class productListFrame {
                     System.out.println("Total Cost: " + mobile.getCost());
                     cost = mobile.getCost();
 
-                    leafEletricProduct EletricProduct = new leafEletricProduct(mobile.getCost(), "Electric Product Bundling");
+                    leafEletricProduct EletricProduct = new leafEletricProduct(mobile.getCost(),
+                            "Electric Product Bundling");
                     operating.addProduct(EletricProduct);
 
-                    flag = 1;
+                    visitable Visitable = new electricProduct(mobile.getCost());
+                    visitor Visitor = new bundleDiscountVisitor();
+                    double bundleCost = Visitable.accept(Visitor);
+
+                    int dialogResult = JOptionPane.showConfirmDialog (null,
+                            "The mobile bundling cost " + a*bundleCost + "\nDo you want add in your cart?",
+                            "Warning", JOptionPane.YES_NO_CANCEL_OPTION);
+                    if(dialogResult == JOptionPane.NO_OPTION || dialogResult == JOptionPane.CANCEL_OPTION){
+                        bundling = false;
+                    }
+
+                    flag = true;
                 }
 
-                if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
-                    bundleProduct mobile = builder.prepareElectricalProduct();
-                    System.out.println("\n\nmobile bundling");
-                    mobile.showItems();
-                    System.out.println("Total Cost: " + mobile.getCost());
-                    cost = mobile.getCost();
+                if (bundling){
+                    if (flag) {
+                        operating.printProduct();
+                    }
 
-                    leafEletricProduct EletricProduct = new leafEletricProduct(mobile.getCost(), "Electric Product Bundling");
-                    operating.addProduct(EletricProduct);
+                    cost += (double) dtm.getValueAt(row, 2);
 
-                    flag = 1;
+                    Vector<Object> v = new Vector<Object>();
+                    v.add(dtm.getValueAt(row, 0));
+                    v.add(dtm.getValueAt(row, 1));
+                    v.add(cost);
+                    v.add(a);
+                    double b = (double) dtm.getValueAt(row, 2);
+                    double vSum = a * cost;
+                    v.add(vSum);
+                    dataTransform pro = new dataTransform();
+
+                    shopping.mall.shoppingCart cart = shoppingCart.getShoppingCart();
+                    int index = cart.addProduct(pro.productTransform(v));
+
+                    if (index != -1) {// add items in shopping cart
+                        DefaultTableModel dd = (DefaultTableModel) shoppingCart.shoppingCartTable.getModel();
+                        dd.setValueAt(cart.getProlist().get(index).getNum(), index, 3);
+                        double total = cart.getProlist().get(index).getNum() * cart.getProlist().get(index).getPrice();
+                        dd.setValueAt(total, index, 4);
+                    } else {// add a row of new items
+                        shoppingCart.getDate().add(v);
+                        shoppingCart.getShoppingCartTable().updateUI();
+                        shoppingCart.getJl2().setText("A total of " + shoppingCart.getShoppingCartTable().getRowCount() +
+                                " items");
+                        shoppingCart.getJl0().setText("Total " + cart.getTotal() + " €");
+                    }
                 }
-
-                if (dtm.getValueAt(row, 1).equals("computer")) {
-                    bundleProduct computer = builder.prepareElectricalProduct();
-                    computer.showItems();
-                    cost = computer.getCost();
-
-                    // Use ComputerPartDisplayVisitor to display the components of Computer
-                    computerPart computerpart = new computer();
-                    computerpart.accept(new computerPartDisplayVisitor());
-                }
-
-                if (flag == 1){
-                    operating.printProduct();
-                }
-
-                cost += (double)dtm.getValueAt(row, 2);
-
-                Vector<Object> v = new Vector<Object>();
-                v.add(dtm.getValueAt(row, 0));
-                v.add(dtm.getValueAt(row, 1));
-                v.add(cost);
-                v.add(a);
-                double b = (double) dtm.getValueAt(row, 2);
-                double vSum = a * cost;
-                v.add(vSum);
-                dataTransform pro = new dataTransform();
-
-                shopping.mall.shoppingCart cart = shoppingCart.getShoppingCart();
-                int index = cart.addProduct(pro.productTransform(v));
-
-                if (index != -1) {// add items in shopping cart
-                    DefaultTableModel dd = (DefaultTableModel) shoppingCart.shoppingCartTable.getModel();
-                    dd.setValueAt(cart.getProlist().get(index).getNum(), index, 3);
-                    double total = cart.getProlist().get(index).getNum()* cart.getProlist().get(index).getPrice();
-                    dd.setValueAt(total, index, 4);
-                } else {// add a row of new items
-                    shoppingCart.getDate().add(v);
-                    shoppingCart.getShoppingCartTable().updateUI();
-                    shoppingCart.getJl2().setText("A total of " + shoppingCart.getShoppingCartTable().getRowCount() + " items");
-                    shoppingCart.getJl0().setText("Total " + cart.getTotal() + " €");
-                }
-
 
                 shoppingCartFrame.setShoppingCartCenterPanel(1);
             }

@@ -14,9 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import shopping.mall.mall;
-import shopping.visitor.computer;
-import shopping.visitor.computerPart;
-import shopping.visitor.computerPartDisplayVisitor;
 
 
 public class menu {
