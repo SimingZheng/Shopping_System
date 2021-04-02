@@ -6,12 +6,11 @@ import java.util.List;
 public class compositeOperating implements notification {
     private float price;
     private String name;
-    private List<notification> leaf;
+    private List<notification> leaf = new ArrayList<notification>();
 
     public compositeOperating(float price, String name) {
         this.price = price;
         this.name = name;
-        this.leaf = new ArrayList<>();
     }
 
     public void printProduct() {

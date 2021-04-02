@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
+import shopping.frontController.frontController;
 import shopping.membership.membershipIdentify;
 import shopping.user.user;
 import shopping.user.userInitial;
@@ -22,6 +25,7 @@ public class login {
         initInterGui();
     }
     //  Login interface GUI
+    @Test
     public void initInterGui() {
 
         JFrame inter = new JFrame("Please login");
@@ -98,25 +102,21 @@ public class login {
             public void actionPerformed(ActionEvent arg0) {
                 jb2.setText("login......");
                 inter.setVisible(false);
-                membershipIdentify membershipIdentify = new membershipIdentify();
-                ArrayUser = membershipIdentify.getUserMembership("General");
-                String name = ArrayUser[0];
-                String membership = ArrayUser[1];
-                int point = Integer.parseInt(ArrayUser[2]);
-                new menu(name, membership, point);
-                }
+//                membershipIdentify membershipIdentify = new membershipIdentify();
+//                ArrayUser = membershipIdentify.getUserMembership("General");
+                frontController frontController = new frontController();
+                frontController.dispatchRequest("General");
+            }
         });
         jb3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 jb3.setText("login......");
                 inter.setVisible(false);
-                membershipIdentify membershipIdentify = new membershipIdentify();
-                ArrayUser = membershipIdentify.getUserMembership("VIP");
-                String name = ArrayUser[0];
-                String membership = ArrayUser[1];
-                int point = Integer.parseInt(ArrayUser[2]);
-                new menu(name, membership, point);
+//                membershipIdentify membershipIdentify = new membershipIdentify();
+//                ArrayUser = membershipIdentify.getUserMembership("VIP");
+                frontController frontController = new frontController();
+                frontController.dispatchRequest("VIP");
             }
         });
         jb4.addActionListener(new ActionListener() {
@@ -124,12 +124,10 @@ public class login {
             public void actionPerformed(ActionEvent arg0) {
                 jb4.setText("login......");
                 inter.setVisible(false);
-                membershipIdentify membershipIdentify = new membershipIdentify();
-                ArrayUser = membershipIdentify.getUserMembership("Gold");
-                String name = ArrayUser[0];
-                String membership = ArrayUser[1];
-                int point = Integer.parseInt(ArrayUser[2]);
-                new menu(name, membership, point);
+//                membershipIdentify membershipIdentify = new membershipIdentify();
+//                ArrayUser = membershipIdentify.getUserMembership("Gold");
+                frontController frontController = new frontController();
+                frontController.dispatchRequest("Gold");
             }
         });
         jb5.addActionListener(new ActionListener() {
@@ -137,12 +135,10 @@ public class login {
             public void actionPerformed(ActionEvent arg0) {
                 jb5.setText("login......");
                 inter.setVisible(false);
-                membershipIdentify membershipIdentify = new membershipIdentify();
-                ArrayUser = membershipIdentify.getUserMembership("Supreme");
-                String name = ArrayUser[0];
-                String membership = ArrayUser[1];
-                int point = Integer.parseInt(ArrayUser[2]);
-                new menu(name, membership, point);
+//                membershipIdentify membershipIdentify = new membershipIdentify();
+//                ArrayUser = membershipIdentify.getUserMembership("Supreme");
+                frontController frontController = new frontController();
+                frontController.dispatchRequest("Supreme");
             }
         });
 
