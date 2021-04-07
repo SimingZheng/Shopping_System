@@ -1,5 +1,8 @@
 package shopping.mall;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import shopping.membership.membershipIdentify;
 import shopping.point.*;
 import shopping.user.userInitial;
 

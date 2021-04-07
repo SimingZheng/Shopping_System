@@ -25,7 +25,6 @@ public class login {
         initInterGui();
     }
     //  Login interface GUI
-    @Test
     public void initInterGui() {
 
         JFrame inter = new JFrame("Please login");
