@@ -1,0 +1,33 @@
+1001,laundry detergent,15.0,-1
+1002,hanger,10.0,-1
+1003,chair,20.0,-1
+1004,table,70.0,-1
+1005,headset,80.0,-1
+1006,thermos cup,60.0,-1
+1007,facial cleanser,40.0,-1
+1008,mouse,60.0,-1
+1009,towel,14.0,-1
+1010,phone case,12.0,-1
+1011,clothes,70.0,-1
+1012,Nokia mobile, 100.0, -1
+1013,furniture bundling, 0, -1
+1014,mobile bundling, 0, -1
+1013,water Purifier, 10, -1
+1014,drinking fountain, 20, -1
+1015,juicer, 30, -1
+1016,coffee machine, 40, -1
+1017,soymilk machine, 50, -1
+1018,electric Kettle, 10, -1
+1019,electric cup, 20, -1
+1020,electric wok, 30, -1
+1021,rice cooker, 40, -1
+1022,humidity regulator, 50, -1
+1023,air purifier, 10, -1
+1024,heating appliances, 20, -1
+1025,hair dryer, 30, -1
+1026,vacuum cleaner, 40, -1
+1027,electric fan, 50, -1
+1028,exhaust fan, 10, -1
+1029,electric iron, 20, -1
+1030,headset, 30, -1
+1031,remote control, 40, -1

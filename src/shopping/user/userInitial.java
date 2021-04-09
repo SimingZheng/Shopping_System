@@ -74,8 +74,8 @@ public class userInitial {
         return Array_DeliverFee;
     }
 
-    public user isLogin(String userName, String password) {
-        user user = userMap.get(userName);
+    public user isLogin(String userID, String password) {
+        user user = userMap.get(userID);
         if (user == null || !user.getPassword().equals(password)){
             return null;
         }
