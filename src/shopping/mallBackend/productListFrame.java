@@ -6,6 +6,9 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -179,6 +182,30 @@ public class productListFrame {
                     Vector<Object> v = new Vector<Object>();
                     v.add(dtm.getValueAt(row, 0));
                     v.add(dtm.getValueAt(row, 1));
+                    String product = (String) dtm.getValueAt(row, 1);
+
+                    //////////////// get recommendations/////////////////
+                    // TODO Auto-generated method stub
+                    Process proc;
+                    String line = null;
+                    try {
+                        String[] args1 = new String[] { "python", "src/shopping/mallBackend/Product_Recommend.py", product};
+                        proc = Runtime.getRuntime().exec(args1);
+//                        proc = Runtime.getRuntime().exec("python src/shopping/mallBackend/Product_Recommend.py juicer");
+                        // execute py file
+                        // use output stream get result
+                        BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+                        while ((line = in.readLine()) != null) {
+                            System.out.println(line);
+                            JOptionPane.showMessageDialog(null, "Recommended product : " + line, "recommendation", JOptionPane.PLAIN_MESSAGE );
+                        }
+                        in.close();
+                        proc.waitFor();
+                    } catch (IOException | InterruptedException x) {
+                        x.printStackTrace();
+                    }
+                    ///////////////////////////////////////////////////////
+
                     v.add(cost);
                     v.add(a);
                     double b = (double) dtm.getValueAt(row, 2);

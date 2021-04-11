@@ -7,6 +7,9 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Vector;
 
 import javax.swing.ImageIcon;
@@ -129,7 +132,9 @@ public class shoppingCartFrame {
         windowSetting.setFrameNear(ShoppingCarGui);
 
         jb0.addActionListener(new java.awt.event.ActionListener() {//Delete the items
+
             public void actionPerformed(ActionEvent evt) {
+
                 DefaultTableModel dtm=(DefaultTableModel)shoppingCartTable.getModel();
                 int row=shoppingCartTable.getSelectedRow();
                 String s=(String)dtm.getValueAt(row, 0);
@@ -147,8 +152,10 @@ public class shoppingCartFrame {
         });
         jb1.addActionListener(new ActionListener() {//check out
 
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent c) {
+
                 JOptionPane.showMessageDialog(null, "checkout successfully", "remind", JOptionPane.WARNING_MESSAGE);
+
                 if(date.isEmpty()) {
                     return;
                 }

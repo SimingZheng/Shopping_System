@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Jython/Jython.iml" filepath="$PROJECT_DIR$/Jython/Jython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shopping_System.iml" filepath="$PROJECT_DIR$/Shopping_System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new_jython/new_jython.iml" filepath="$PROJECT_DIR$/new_jython/new_jython.iml" />
+      <module fileurl="file://$PROJECT_DIR$/python_module/python_module.iml" filepath="$PROJECT_DIR$/python_module/python_module.iml" />
     </modules>
   </component>
 </project>

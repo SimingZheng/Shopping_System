@@ -34,7 +34,7 @@ public class mall {
         // TODO Auto-generated method stub
         BufferedReader br= null;
         try {
-            br=new BufferedReader(new FileReader(new File("src/shopping/products.txt")));
+            br=new BufferedReader(new FileReader(new File("src/shopping/database/products.txt")));
             String line;
             try {
                 while((line=br.readLine())!=null) {
