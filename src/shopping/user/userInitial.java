@@ -3,7 +3,7 @@ package shopping.user;
 import shopping.deliverFee.contextFee;
 import shopping.deliverFee.fee;
 import shopping.deliverFee.nofee;
-import shopping.membership.membershipIdentify;
+import shopping.membership.*;
 import shopping.user.user;
 
 import java.util.HashMap;
@@ -46,8 +46,9 @@ public class userInitial {
     }
 
     public String [] getMemberhipDiscount(double total, String membership){
-        membershipIdentify membershipIdentify = new membershipIdentify();
-        Array_MembershipDiscount = membershipIdentify.getDiscount(total, membership);
+        //membershipIdentify membershipIdentify = new membershipIdentify();
+        generalUser generaluser = new generalUser();
+        Array_MembershipDiscount = generaluser.discount(membership, total);
         return Array_MembershipDiscount;
     }
 
