@@ -7,7 +7,7 @@ import shopping.bundling.bundleProduct;
 import shopping.composite.compositeOperating;
 import shopping.composite.leafEletricProduct;
 import shopping.composite.leafFurniture;
-import shopping.membership.membershipIdentify;
+import shopping.membership.generalUser;
 import shopping.point.normalPoint;
 import shopping.point.pointSettor;
 import shopping.point.points;
@@ -17,14 +17,14 @@ public class JUnitTest {
     String [] Array_MembershipDiscount;
     @Test
     void testMembershipDiscount(){
-        membershipIdentify membershipIdentify = new membershipIdentify();
-        Array_MembershipDiscount = membershipIdentify.getDiscount(100, "General");
+        generalUser generaluser = new generalUser();
+        Array_MembershipDiscount = generaluser.discount("General", 100);
         Assertions.assertEquals(" (no discount)", Array_MembershipDiscount[1]);
         System.out.println("Membership discount test :" + Array_MembershipDiscount[1]);
         Assertions.assertEquals( 100.0 , Double.parseDouble(Array_MembershipDiscount[0]));
         System.out.println("discount test :" + Array_MembershipDiscount[0]);
 
-        Array_MembershipDiscount = membershipIdentify.getDiscount(100, "VIP");
+        Array_MembershipDiscount = generaluser.discount("VIP",100);
         Assertions.assertEquals(" (5% discount)", Array_MembershipDiscount[1]);
         System.out.println("Membership discount test :" + Array_MembershipDiscount[1]);
         Assertions.assertEquals( 95.0 , Double.parseDouble(Array_MembershipDiscount[0]));

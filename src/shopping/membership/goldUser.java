@@ -2,12 +2,13 @@ package shopping.membership;
 
 import shopping.membership.membership;
 
-public class goldUser implements membership {
+public class goldUser implements MembershipUser{
     private String discount;
     private String [] ArrayDiscount = new String[2];
     private String [] ArrayUser = new String[3];
+
     @Override
-    public String [] discount(double total) {
+    public String[] dicount(double total) {
         total *= 0.9;
         discount = " (10% discount)";
         ArrayDiscount[0] = Double.toString(total);

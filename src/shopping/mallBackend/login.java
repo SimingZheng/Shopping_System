@@ -14,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.*;
 import shopping.frontController.frontController;
-import shopping.membership.membershipIdentify;
+import shopping.membership.*;
 import shopping.user.user;
 import shopping.user.userInitial;
 

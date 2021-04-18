@@ -1,4 +1,4 @@
-package shopping.membership;
+/*package shopping.membership;
 
 public class membershipIdentify {
     private String [] ArrayDiscount = new String[2];
@@ -37,4 +37,4 @@ public class membershipIdentify {
                 return new generalUser().generate();
         }
     }
-}
+}*/
