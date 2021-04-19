@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import shopping.Command.Editor;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
 import shopping.mall.product;
@@ -55,6 +56,8 @@ public class searchFrame {
         JTextField jt1 = new JTextField(12); // Create text box
         JButton jb1 = new JButton("Search");
 
+        JButton jb3 = new JButton("Open the complete type box");
+
         p0.add(jl2);
         p0.add(jt1);
         p0.add(jb1);
@@ -81,6 +84,9 @@ public class searchFrame {
         panel2.add(searchtListScrollPane);
 
         panel2.add(p0);
+
+        panel2.add(jb3);
+
         panel2.add(searchtListScrollPane);
         panel2.add(p1);
         searchGui.add(panel2);
@@ -142,6 +148,14 @@ public class searchFrame {
                 }
 
                 shoppingcar.setShoppingCartCenterPanel(1);
+            }
+        });
+
+        jb3.addActionListener(new ActionListener() { //open type box
+
+            public void actionPerformed(ActionEvent e) {
+                Editor editor = new Editor();
+                editor.init();
             }
         });
     }

@@ -28,6 +28,9 @@ import shopping.composite.leafEletricProduct;
 import shopping.composite.leafFurniture;
 import shopping.mall.dataTransform;
 import shopping.mall.mall;
+import shopping.proxydownload.ThirdPartyYouTubeClass;
+import shopping.proxydownload.YouTubeCacheProxy;
+import shopping.proxydownload.YouTubeDownloader;
 import shopping.visitor.bundleDiscountVisitor;
 import shopping.visitor.electricProduct;
 import shopping.visitor.visitable;
@@ -88,12 +91,23 @@ public class productListFrame {
         productListGui.add(panel1, BorderLayout.NORTH);
 
         // Copyright
+//        JPanel panel3 = new JPanel(new GridLayout(2, 0));
+//        JButton jb1 = new JButton("add to shopping cart");
+//        jb1.setFont(new java.awt.Font("Times New Roma", 1, 20));
+
         JPanel panel3 = new JPanel(new GridLayout(2, 0));
         JButton jb1 = new JButton("add to shopping cart");
-        jb1.setFont(new java.awt.Font("Times New Roma", 1, 20));
+        jb1.setFont(new java.awt.Font("Times New Roma", 1, 15));
+
+        JButton jb2 = new JButton("download product introduction");
+        jb2.setFont(new java.awt.Font("Times New Roma", 1, 12));
+
         JLabel jl3 = new JLabel("Shopping System");
         jl3.setFont(new Font("Times New Roma", Font.PLAIN, 15)); // Set font
         jl3.setHorizontalAlignment(SwingConstants.CENTER);
+
+        panel3.add(jb2, JPanel.RIGHT_ALIGNMENT);
+
         panel3.add(jb1, JPanel.RIGHT_ALIGNMENT);
         panel3.add(jl3);
         productListGui.add(panel3, BorderLayout.SOUTH);
@@ -233,6 +247,34 @@ public class productListFrame {
                 shoppingCartFrame.setShoppingCartCenterPanel(1);
             }
         });
+
+        jb2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                YouTubeDownloader naiveDownloader = new YouTubeDownloader(new ThirdPartyYouTubeClass());
+                YouTubeDownloader smartDownloader = new YouTubeDownloader(new YouTubeCacheProxy());
+
+                long naive = test(naiveDownloader);
+                long smart = test(smartDownloader);
+                System.out.print("Time saved by caching proxy: " + (naive - smart) + "ms");
+            }
+        });
+    }
+
+    private static long test(YouTubeDownloader downloader) {
+        long startTime = System.currentTimeMillis();
+
+        // User behavior in our app:
+        downloader.renderPopularVideos();
+        downloader.renderVideoPage("Introduction to the Chair");
+        downloader.renderPopularVideos();
+        downloader.renderVideoPage("Introduction to the Towel");
+        // Users might visit the same page quite often.
+        downloader.renderVideoPage("Introduction to the Chair");
+        downloader.renderVideoPage("someothervid");
+
+        long estimatedTime = System.currentTimeMillis() - startTime;
+        System.out.print("Time elapsed: " + estimatedTime + "ms\n");
+        return estimatedTime;
     }
 
     public JTable getProductList() {
