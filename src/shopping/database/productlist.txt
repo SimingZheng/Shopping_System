@@ -1,0 +1,33 @@
+1001,Household,Fairy,laundry detergent,15.0,-1
+1002,Household,Ikea,hanger,10.0,-1
+1003,Furniture,Ikea,chair,20.0,-1
+1004,Furniture,Ikea,table,70.0,-1
+1005,ElectronicProduct,Sony,headset,80.0,-1
+1006,Household appliances/electronics,Ikea,thermos cup,60.0,-1
+1007,Health and Beauty,Chanel,facial cleanser,40.0,-1
+1008,Electronic Product,Apple,mouse,60.0,-1
+1009,Household,Ikea,towel,14.0,-1
+1010,ElectronicProduct,Apple,phone case,12.0,-1
+1011,Clothes,Chanel,T-shirt,70.0,-1
+1012,ElectronicProduct,Apple,iPhone12,929.0,-1
+1013,Bundling,No,furniture bundling,0,-1
+1014,Bundling,No,mobile bundling,0,-1
+1013,Household appliances/electronics,Philips,waterPurifier,10,-1
+1014,Household appliances/electronics,Philips,drinking fountain,20,-1
+1015,Household appliances/electronics,Philips,juicer,30,-1
+1016,Household appliances/electronics,Philips,coffee machine,40,-1
+1017,Household appliances/electronics,Philips,soy milk machine,50,-1
+1018,Household appliances/electronics,Philips,electricKettle,10,-1
+1019,Household appliances/electronics,Philips,electric cup,20,-1
+1020,Household appliances/electronics,Zwilling,electric wok,30,-1
+1021,Household appliances/electronics,Zwilling,rice cooker,40,-1
+1022,Household appliances/electronics,Philips,humidity regulator,50,-1
+1023,Household appliances/electronics,Philips,air purifier,10,-1
+1024,Household appliances/electronics,Philips,heating appliances,20,-1
+1025,Household appliances/electronics,Philips,hairdryer,30,-1
+1026,Household appliances/electronics,Philips,vacuum cleaner,40,-1
+1027,Household appliances/electronics,Philips,electric fan,50,-1
+1028,Household appliances/electronics,Philips,exhaust fan,10,-1
+1029,Household appliances/electronics,Philips,electric iron,20,-1
+1030,ElectronicProduct,Apple,headset,30,-1
+1031,Household appliances/electronics,Philips,remote control,40,-1

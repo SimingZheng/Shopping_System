@@ -65,6 +65,8 @@ public class productListFrame {
         Vector<Vector<Object>> date = new Vector<Vector<Object>>();
         Vector<String> names = new Vector<String>();
         names.add("Product ID");
+        names.add("Product Category");
+        names.add("Brand");
         names.add("Product Name");
         names.add("Unit price (€)");
         dataTransform.changeList(mall.getProlist(),date);
@@ -133,7 +135,7 @@ public class productListFrame {
 
                 boolean flag = false;
                 boolean bundling = true;
-                if (dtm.getValueAt(row, 1).equals("furniture bundling")) {
+                if (dtm.getValueAt(row, 3).equals("furniture bundling")) {
                     bundleProduct furniture = builder.prepareFurniture();
                     System.out.println("furniture bundling");
                     furniture.showItems();
@@ -161,7 +163,7 @@ public class productListFrame {
                     flag = true;
                 }
 
-                if (dtm.getValueAt(row, 1).equals("mobile bundling")) {
+                if (dtm.getValueAt(row, 3).equals("mobile bundling")) {
                     bundleProduct mobile = builder.prepareElectricalProduct();
                     System.out.println("\n\nmobile bundling");
                     mobile.showItems();
@@ -191,12 +193,14 @@ public class productListFrame {
                         operating.printProduct();
                     }
 
-                    cost += (double) dtm.getValueAt(row, 2);
+                    cost += (double) dtm.getValueAt(row, 4);
 
                     Vector<Object> v = new Vector<Object>();
                     v.add(dtm.getValueAt(row, 0));
                     v.add(dtm.getValueAt(row, 1));
-                    String product = (String) dtm.getValueAt(row, 1);
+                    v.add(dtm.getValueAt(row, 2));
+                    v.add(dtm.getValueAt(row, 3));
+                    String product = (String) dtm.getValueAt(row, 3);
 
                     //////////////// get recommendations/////////////////
                     // TODO Auto-generated method stub
@@ -222,7 +226,7 @@ public class productListFrame {
 
                     v.add(cost);
                     v.add(a);
-                    double b = (double) dtm.getValueAt(row, 2);
+                    double b = (double) dtm.getValueAt(row, 4);
                     double vSum = a * cost;
                     v.add(vSum);
                     dataTransform pro = new dataTransform();
