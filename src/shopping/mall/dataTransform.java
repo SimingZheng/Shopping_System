@@ -25,145 +25,145 @@ public class dataTransform {
         switch (brand) {
             case "Fairy": switch (category) {
                 case "Household":
-                    pro = new Fairy(name, id, price, -1, new Household());
+                    pro = new Fairy(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Fairy(name, id, price, -1, new Furniture());
+                    pro = new Fairy(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Fairy(name, id, price, -1, new electronicProduct());
+                    pro = new Fairy(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Fairy(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Fairy(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Fairy(name, id, price, -1, new healthBeauty());
+                    pro = new Fairy(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Fairy(name, id, price, -1, new Clothes());
+                    pro = new Fairy(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Ikea":switch (category) {
                 case "Household":
-                    pro = new Ikea(name, id, price, -1, new Household());
+                    pro = new Ikea(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Ikea(name, id, price, -1, new Furniture());
+                    pro = new Ikea(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Ikea(name, id, price, -1, new electronicProduct());
+                    pro = new Ikea(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Ikea(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Ikea(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Ikea(name, id, price, -1, new healthBeauty());
+                    pro = new Ikea(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Ikea(name, id, price, -1, new Clothes());
+                    pro = new Ikea(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Sony":switch (category) {
                 case "Household":
-                    pro = new Sony(name, id, price, -1, new Household());
+                    pro = new Sony(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Sony(name, id, price, -1, new Furniture());
+                    pro = new Sony(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Sony(name, id, price, -1, new electronicProduct());
+                    pro = new Sony(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Sony(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Sony(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Sony(name, id, price, -1, new healthBeauty());
+                    pro = new Sony(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Sony(name, id, price, -1, new Clothes());
+                    pro = new Sony(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Chanel":switch (category) {
                 case "Household":
-                    pro = new Chanel(name, id, price, -1, new Household());
+                    pro = new Chanel(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Chanel(name, id, price, -1, new Furniture());
+                    pro = new Chanel(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Chanel(name, id, price, -1, new electronicProduct());
+                    pro = new Chanel(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Chanel(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Chanel(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Chanel(name, id, price, -1, new healthBeauty());
+                    pro = new Chanel(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Chanel(name, id, price, -1, new Clothes());
+                    pro = new Chanel(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Apple":switch (category) {
                 case "Household":
-                    pro = new Apple(name, id, price, -1, new Household());
+                    pro = new Apple(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Apple(name, id, price, -1, new Furniture());
+                    pro = new Apple(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Apple(name, id, price, -1, new electronicProduct());
+                    pro = new Apple(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Apple(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Apple(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Apple(name, id, price, -1, new healthBeauty());
+                    pro = new Apple(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Apple(name, id, price, -1, new Clothes());
+                    pro = new Apple(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Philips":switch (category) {
                 case "Household":
-                    pro = new Philips(name, id, price, -1, new Household());
+                    pro = new Philips(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Philips(name, id, price, -1, new Furniture());
+                    pro = new Philips(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Philips(name, id, price, -1, new electronicProduct());
+                    pro = new Philips(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Philips(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Philips(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Philips(name, id, price, -1, new healthBeauty());
+                    pro = new Philips(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Philips(name, id, price, -1, new Clothes());
+                    pro = new Philips(name, id, price, num, new Clothes());
                     break;
             } break;
             case "Zwilling":switch (category) {
                 case "Household":
-                    pro = new Zwilling(name, id, price, -1, new Household());
+                    pro = new Zwilling(name, id, price, num, new Household());
                     break;
                 case "Furniture":
-                    pro = new Zwilling(name, id, price, -1, new Furniture());
+                    pro = new Zwilling(name, id, price, num, new Furniture());
                     break;
                 case "Electronic Product":
-                    pro = new Zwilling(name, id, price, -1, new electronicProduct());
+                    pro = new Zwilling(name, id, price, num, new electronicProduct());
                     break;
-                case "Household appliances/electronics":
-                    pro = new Zwilling(name, id, price, -1, new householdAppliances());
+                case "Household appliances":
+                    pro = new Zwilling(name, id, price, num, new householdAppliances());
                     break;
                 case "Health and Beauty":
-                    pro = new Zwilling(name, id, price, -1, new healthBeauty());
+                    pro = new Zwilling(name, id, price, num, new healthBeauty());
                     break;
                 case "Clothes":
-                    pro = new Zwilling(name, id, price, -1, new Clothes());
+                    pro = new Zwilling(name, id, price, num, new Clothes());
                     break;
             } break;
-            case "Bundling" : pro = new noBrand(name, id, price, -1, new Bundling()); break;
+            case "Bundling" : pro = new noBrand(name, id, price, num, new Bundling()); break;
         }
         return pro;
     }

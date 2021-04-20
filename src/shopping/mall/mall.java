@@ -61,7 +61,7 @@ public class mall {
                                 case "Electronic Product":
                                     p = new Fairy(name, id, price, -1, new electronicProduct());
                                     break;
-                                case "Household appliances/electronics":
+                                case "Household appliances":
                                     p = new Fairy(name, id, price, -1, new householdAppliances());
                                     break;
                                 case "Health and Beauty":
@@ -81,7 +81,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Ikea(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Ikea(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":
@@ -101,7 +101,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Sony(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Sony(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":
@@ -121,7 +121,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Chanel(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Chanel(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":
@@ -141,7 +141,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Apple(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Apple(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":
@@ -161,7 +161,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Philips(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Philips(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":
@@ -181,7 +181,7 @@ public class mall {
                             case "Electronic Product":
                                 p = new Zwilling(name, id, price, -1, new electronicProduct());
                                 break;
-                            case "Household appliances/electronics":
+                            case "Household appliances":
                                 p = new Zwilling(name, id, price, -1, new householdAppliances());
                                 break;
                             case "Health and Beauty":

@@ -67,7 +67,7 @@ public class searchFrame {
 
         Vector<Vector<Object>> vDate = new Vector<Vector<Object>>();
         Vector<String> vName = new Vector<String>();
-        vName.addElement("products number");vName.addElement("products name");vName.addElement("Unit price (€)");
+        vName.addElement("products ID");vName.addElement("products category");vName.addElement("products brand");vName.addElement("products name");vName.addElement("Unit price (€)");
         DefaultTableModel model = new DefaultTableModel() { // Table data cannot be changed
 
             public boolean isCellEditable(int row, int column) {
@@ -126,8 +126,10 @@ public class searchFrame {
                 v.add(dtm.getValueAt(row, 0));
                 v.add(dtm.getValueAt(row, 1));
                 v.add(dtm.getValueAt(row, 2));
+                v.add(dtm.getValueAt(row, 3));
+                v.add(dtm.getValueAt(row, 4));
                 v.add(a);
-                double b=(double) dtm.getValueAt(row, 2);
+                double b=(double) dtm.getValueAt(row, 4);
                 double sum=a*b;
                 v.add(sum);
                 dataTransform pro = new dataTransform();

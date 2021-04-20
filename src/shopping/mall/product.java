@@ -65,7 +65,7 @@ class electronicProduct implements Category{
 
 class householdAppliances implements Category{
     private boolean discontable = true;
-    private String category = "Household Appliances";
+    private String category = "Household appliances";
 
     public String getCategory(){
         return category;
@@ -83,7 +83,7 @@ class householdAppliances implements Category{
 
 class healthBeauty implements Category{
     private boolean discontable = true;
-    private String category = "Health Beauty";
+    private String category = "Health and Beauty";
 
     public String getCategory(){
         return category;

@@ -1,7 +1,5 @@
 package shopping.membership;
 
-import shopping.membership.membership;
-
 public class generalUser implements Discount{
     VIPAdapter vipAdapter;
     private String discount;

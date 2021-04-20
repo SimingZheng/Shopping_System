@@ -70,7 +70,7 @@ public class shoppingCartFrame {
                 else return false;
             }
         };
-        ColumnNames.add("item Number");ColumnNames.add("item name");ColumnNames.add("unit price (Euro)");ColumnNames.add("number");ColumnNames.add("total price");
+        ColumnNames.add("item ID");ColumnNames.add("Category");ColumnNames.add("Brand");ColumnNames.add("item name");ColumnNames.add("unit price (Euro)");ColumnNames.add("number");ColumnNames.add("total price");
         model.setDataVector(date,ColumnNames);
         shoppingCartTable = new JTable(model);
         windowSetting.setTable(shoppingCartTable);

@@ -1,7 +1,5 @@
 package shopping.membership;
 
-import shopping.membership.membership;
-
 public class vipUser implements MembershipUser {
     private String discount;
     private String [] ArrayDiscount = new String[2];
