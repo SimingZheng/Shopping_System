@@ -39,7 +39,7 @@ public class windowSetting {
         table.setRowHeight(35);		//Set row height
         table.setSelectionBackground(Color.LIGHT_GRAY);     // Font background after selection
         //table.setShowGrid(false);
-        table.setPreferredScrollableViewportSize(new Dimension(400, 490));
+        table.setPreferredScrollableViewportSize(new Dimension(500, 490));
 
 
     }

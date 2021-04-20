@@ -126,7 +126,7 @@ public class shoppingCartFrame {
         panel3.add(jl3);
         ShoppingCarGui.add(panel3, BorderLayout.SOUTH);
         // Display the window.
-        ShoppingCarGui.setSize(450, 850);
+        ShoppingCarGui.setSize(550, 850);
         ShoppingCarGui.setVisible(false);
         //
         windowSetting.setFrameNear(ShoppingCarGui);

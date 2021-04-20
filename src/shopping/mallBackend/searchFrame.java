@@ -67,7 +67,7 @@ public class searchFrame {
 
         Vector<Vector<Object>> vDate = new Vector<Vector<Object>>();
         Vector<String> vName = new Vector<String>();
-        vName.addElement("products ID");vName.addElement("products category");vName.addElement("products brand");vName.addElement("products name");vName.addElement("Unit price (€)");
+        vName.addElement("products ID");vName.addElement("category");vName.addElement("brand");vName.addElement("name");vName.addElement("Unit price (€)");
         DefaultTableModel model = new DefaultTableModel() { // Table data cannot be changed
 
             public boolean isCellEditable(int row, int column) {
@@ -100,7 +100,7 @@ public class searchFrame {
         searchGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        searchGui.setSize(550, 450);
+        searchGui.setSize(550, 500);
         searchGui.setVisible(false);
         // Set the window to center
         windowSetting.setFrameNear(searchGui);
