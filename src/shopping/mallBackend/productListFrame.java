@@ -64,15 +64,15 @@ public class productListFrame {
         };
         Vector<Vector<Object>> date = new Vector<Vector<Object>>();
         Vector<String> names = new Vector<String>();
-        names.add("Product ID");
-        names.add("Product Category");
+        names.add("ID");
+        names.add("Category");
         names.add("Brand");
-        names.add("Product Name");
+        names.add("Name");
         names.add("Unit price (€)");
         dataTransform.changeList(mall.getProlist(),date);
         model.setDataVector(date, names);
 
-        JTable productListTable = new JTable(model);//Create a table and set row data and table head
+        JTable productListTable = new JTable(model); //Create a table and set row data and table head
         windowSetting.setTable(productListTable); // Set Table
 
         JScrollPane ProductListScrollPane = new JScrollPane(productListTable);
@@ -115,7 +115,7 @@ public class productListFrame {
         productListGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        productListGui.setSize(450, 800);
+        productListGui.setSize(520, 800);
         productListGui.setVisible(false);
         // Set Windows mediate
         windowSetting.setFrameNear(productListGui);
