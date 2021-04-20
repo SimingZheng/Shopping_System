@@ -222,7 +222,7 @@ public class productListFrame {
                     } catch (IOException | InterruptedException x) {
                         x.printStackTrace();
                     }
-                    ///////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////
 
                     v.add(cost);
                     v.add(a);

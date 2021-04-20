@@ -21,6 +21,7 @@ public class dataTransform {
         String name = (String) v.get(3);
         double price = Double.parseDouble(v.get(4).toString());
         int num = Integer.parseInt(v.get(5).toString());
+        //bridge
         switch (brand) {
             case "Fairy": switch (category) {
                 case "Household":

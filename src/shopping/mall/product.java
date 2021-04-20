@@ -1,3 +1,4 @@
+/*bridge*/
 package shopping.mall;
 
 interface Category {
