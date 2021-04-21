@@ -204,6 +204,28 @@ public class mall {
             e.printStackTrace();
         }
 
+//        try {
+//            br=new BufferedReader(new FileReader(new File("src/shopping/database/products.txt")));
+//            String line;
+//            try {
+//                while((line=br.readLine())!=null) {
+//                    String id;
+//                    String name;
+//                    double price;
+//                    String[] strs=line.split(",");
+//                    id=strs[0];name=strs[1];price=Double.parseDouble(strs[2]);
+//                    product p = new product(id,name,price,-1);
+//                    prolist.add(p);
+//                }
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        } catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+
 //		Product p0 = new Product("1001","aaa",15.0,-1);prolist.add(p0);
 //		Product p1 = new Product("1002","bbba",100.0,-1);prolist.add(p1);
 //		Product p2 = new Product("1003","ccc",20.0,-1);prolist.add(p2);

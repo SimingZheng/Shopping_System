@@ -60,7 +60,7 @@ public class orderFrame {
         JPanel p0 = new JPanel(new FlowLayout());
 
 
-        vName.add("Product ID");vName.add("Product Name");vName.add("Unit price (€)");vName.add("Amount");vName.add("Total");
+        vName.add("Product ID");vName.add("Name");vName.add("Unit price (€)");vName.add("Amount");vName.add("Total");
 
         DefaultTableModel model = new DefaultTableModel() {
             public boolean isCellEditable(int row, int column) {
@@ -98,7 +98,7 @@ public class orderFrame {
         orderGui.add(panel3, BorderLayout.SOUTH);
 
         // Display the window.
-        orderGui.setSize(450, 750);
+        orderGui.setSize(550, 750);
         orderGui.setVisible(false);
 
         windowSetting.setFrameNear(orderGui);
