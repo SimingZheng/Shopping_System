@@ -124,8 +124,9 @@ public class productListFrame {
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 // AddProduct();
+                int a= 0;
                 String inputValue = JOptionPane.showInputDialog("Please enter number of items you want to add");
-                int a = Integer.parseInt(inputValue);
+                a = Integer.parseInt(inputValue);
                 DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) productListTable.getModel();
 
                 int row = productListTable.getSelectedRow();

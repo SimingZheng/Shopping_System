@@ -163,7 +163,7 @@ public class dataTransform {
                     pro = new Zwilling(name, id, price, num, new Clothes());
                     break;
             } break;
-            case "Bundling" : pro = new noBrand(name, id, price, num, new Bundling()); break;
+            case "No" : pro = new noBrand(name, id, price, num, new Bundling()); break;
         }
         return pro;
     }

@@ -22,7 +22,7 @@ public class mall {
     public ArrayList<product> searchProduct(String pro) {//search product
         ArrayList<product> list=new ArrayList<product>();
         for(product a: prolist) {
-            if(a.getName().indexOf(pro)!=-1) {
+            if(a.getName().contains(pro)) {
                 list.add(a);
             }
         }
@@ -191,7 +191,7 @@ public class mall {
                                 p = new Zwilling(name, id, price, -1, new Clothes());
                                 break;
                         } break;
-                        case "Bundling" : p = new noBrand(name, id, price, -1, new Bundling()); break;
+                        case "No" : p = new noBrand(name, id, price, -1, new Bundling()); break;
                     }
                     prolist.add(p);
                 }

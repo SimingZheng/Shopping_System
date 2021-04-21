@@ -67,7 +67,7 @@ public class searchFrame {
 
         Vector<Vector<Object>> vDate = new Vector<Vector<Object>>();
         Vector<String> vName = new Vector<String>();
-        vName.addElement("products ID");vName.addElement("products category");vName.addElement("products brand");vName.addElement("products name");vName.addElement("Unit price (€)");
+        vName.addElement("ID");vName.addElement("Category");vName.addElement("Brand");vName.addElement("Name");vName.addElement("Unit price (€)");
         DefaultTableModel model = new DefaultTableModel() { // Table data cannot be changed
 
             public boolean isCellEditable(int row, int column) {
@@ -110,7 +110,8 @@ public class searchFrame {
             public void actionPerformed(ActionEvent e) {
                 vDate.clear();
                 String pro=jt1.getText();
-                ArrayList<product> prolist=mall.searchProduct(pro);
+                ArrayList<product> prolist= null;
+                prolist = mall.searchProduct(pro);
                 dataTransform.changeList(prolist,vDate);
                 searchList.updateUI();
             }
@@ -119,7 +120,8 @@ public class searchFrame {
 
             public void actionPerformed(ActionEvent e) {//Add items to shopping cart
                 String inputValue = JOptionPane.showInputDialog("Please enter the number of items added");
-                int a=Integer.parseInt(inputValue);
+                int a = 0;
+                a = Integer.parseInt(inputValue);
                 DefaultTableModel dtm=(javax.swing.table.DefaultTableModel)searchList.getModel();
                 int row=searchList.getSelectedRow();
                 Vector<Object> v=new Vector<Object>();
@@ -145,7 +147,7 @@ public class searchFrame {
                     shoppingcar.getDate().add(v);
                     shoppingcar.getShoppingCartTable().updateUI();
                     shoppingcar.getJl2().setText("A total of " + shoppingcar.getShoppingCartTable().getRowCount() + " item");
-                    double price=Double.parseDouble(v.get(2).toString());
+                    double price=Double.parseDouble(v.get(4).toString());
                     shoppingcar.getJl0().setText("Total " + shoppingcar.getShoppingCart().getTotal() + " €");
                 }
 
